@@ -1,0 +1,5 @@
+Contact: https://ipialabogados.example.com/contact
+Expires: 2027-08-25T00:00:00.000Z
+Acknowledgments: https://ipialabogados.example.com/.well-known/security.txt
+Preferred-Languages: es, en
+Canonical: https://ipialabogados.example.com/.well-known/security.txt

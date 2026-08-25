@@ -20,11 +20,23 @@ FROM nginx:alpine AS runtime
 LABEL maintainer="Ipial Abogados" \
       description="Static Astro build served via nginx"
 
+# Harden base: upgrade packages to pick up security patches
+RUN apk upgrade --no-cache
+
 # Copy built site
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Copy nginx config
+# Copy nginx config (replaces default server)
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
+# Remove default nginx welcome page remnants if any and ensure correct perms
+RUN chmod -R 755 /usr/share/nginx/html && \
+    rm -f /etc/nginx/conf.d/default.conf.bak
+
 EXPOSE 80
+
+# Healthcheck for Dokploy / orchestrator liveness (127.0.0.1 avoids ::1 resolution issues)
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD wget --no-verbose --tries=1 --spider http://127.0.0.1/health || exit 1
+
 CMD ["nginx", "-g", "daemon off;"]

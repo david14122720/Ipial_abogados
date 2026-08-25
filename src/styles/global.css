@@ -1,5 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
+
+/* Self-hosted fonts via @fontsource */
+@import "@fontsource/manrope/400.css";
+@import "@fontsource/manrope/500.css";
+@import "@fontsource/manrope/600.css";
+@import "@fontsource/manrope/700.css";
+@import "@fontsource/libre-caslon-text/400.css";
+@import "@fontsource/libre-caslon-text/700.css";
+@import "@fontsource/libre-caslon-text/400-italic.css";
 
 @theme {
   --color-primary: #005243;
