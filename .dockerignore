@@ -1,0 +1,51 @@
+node_modules
+dist
+.astro
+
+# Git
+.git
+.gitignore
+.github
+
+# Editor / IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# Claude / AI
+.claude
+
+# Project docs & specs (not needed at build)
+openspec
+README.md
+objetivo.md
+Imagenes
+
+# Nextcloud sync artefacts
+.sync*
+.~lock*
+*.sync-conflict*
+.nfs*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env (Dokploy injects at runtime; never bake secrets)
+.env
+.env.*
+!.env.example
+
+# Tests / coverage
+coverage
+.nyc_output
+
+# Misc
+npm-debug.log*
+pnpm-debug.log*
+.cache
+
+# Keep pnpm-lock.yaml — intentionally NOT ignored
+# Keep pnpm-workspace.yaml — intentionally NOT ignored

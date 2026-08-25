@@ -1,0 +1,58 @@
+schema: spec-driven
+version: "1.0"
+project: ipial_abogados
+artifact_store: hybrid
+execution_mode: auto
+delivery_strategy: auto-chain
+review_budget_lines: 400
+
+context: |
+  Stack: Astro 7.2.4 + TypeScript strict (astro/tsconfigs/strict, jsx react-jsx) + Tailwind CSS v4 (@tailwindcss/vite) + React 19 Islands (@astrojs/react 6) + Astro Content Collections (src/content.config.ts)
+  Architecture: Static-first (95% static dist/) with React islands for interactivity; Node >=22.12.0
+  Build: npm run build OK (static, 1 page)
+  Source: objetivo.md — landing single-page (hero, sobre, servicios, abogados, por-que, contacto, ubicacion, footer)
+  Content: src/content.config.ts — collections servicios {title,description,icon,order} + abogados {name,role,specialties,description,image,academic,order}
+  Conventions: AGENTS.md → Astro docs routing/components; minimal animations, sober professional design
+  Persistence: hybrid (engram + openspec files)
+
+strict_tdd: false
+
+testing:
+  runner: none
+  layers:
+    unit: false
+    integration: false
+    e2e: false
+  coverage: false
+  linter: none
+  type_checker: "astro check / tsc (strict)"
+  formatter: none
+  test_command: ""
+  build_command: "npm run build"
+  coverage_threshold: 0
+
+rules:
+  proposal:
+    - Include rollback plan for risky changes
+    - Keep changes reviewable (<400 lines per chain)
+  specs:
+    - Use Given/When/Then for scenarios
+    - Use RFC 2119 keywords (MUST, SHALL, SHOULD, MAY)
+  design:
+    - Document architecture decisions with rationale
+    - Prefer Astro static + islands; avoid deprecated @astrojs/tailwind
+  tasks:
+    - Group by phase, use hierarchical numbering
+    - Keep tasks completable in one session
+  apply:
+    guidelines:
+      - Follow existing code patterns and objetivo.md constraints
+      - Do not invent lawyer/firm data; use placeholder content clearly marked
+    tdd: false
+    test_command: ""
+  verify:
+    test_command: ""
+    build_command: "npm run build"
+    coverage_threshold: 0
+  archive:
+    - Warn before merging destructive deltas

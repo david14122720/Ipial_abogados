@@ -1,0 +1,24 @@
+---
+import "../styles/global.css";
+interface Props { title?: string; description?: string; }
+const {
+  title = "Ipial Abogados — Excelencia Jurídica y Compromiso Humano",
+  description = "Firma de abogados en Ipiales, Nariño. Asesoría en derecho civil, familia, laboral, administrativo y penal. Atención personalizada y compromiso ético.",
+} = Astro.props;
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body class="antialiased bg-[#f9f9f9] text-[#1a1c1c]">
+    <slot />
+  </body>
+</html>

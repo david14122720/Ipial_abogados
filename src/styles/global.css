@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #005243;
+  --color-primary-container: #1e6b5a;
+  --color-surface: #f9f9f9;
+  --color-on-surface: #1a1c1c;
+  --color-secondary: #5b5f61;
+  --color-outline: #6f7975;
+  --color-outline-variant: #bec9c4;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background: #f9f9f9;
+  color: #1a1c1c;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Libre Caslon Text', serif;
+}
+
+.underline-motif {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 12px;
+}
+.underline-motif::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: #1e6b5a;
+}
+.underline-motif--center::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
