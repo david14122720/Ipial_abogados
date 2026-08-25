@@ -1,46 +1,40 @@
-# Astro Starter Kit: Basics
+# Ipial Abogados
 
-```sh
-npm create astro@latest -- --template basics
-```
+Sitio web institucional para el estudio jurídico Ipial Abogados.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🚀 Stack Tecnológico
 
-## 🚀 Project Structure
+- **Framework**: [Astro](https://astro.build/)
+- **UI**: [React](https://react.dev/) & [Tailwind CSS](https://tailwindcss.com/)
+- **Gestor de Paquetes**: [pnpm](https://pnpm.io/)
+- **Servidor**: [Nginx](https://nginx.org/) (Dockerized)
+- **Despliegue**: [Dokploy](https://dokploy.com/)
+- **Analíticas**: [Umami](https://umami.is/)
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🛠️ Instalación y Desarrollo
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+### Requisitos previos
+- Node.js (LTS)
+- pnpm
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+### Pasos para ejecutar localmente
+1. Clonar el repositorio:
+   ```sh
+   git clone https://github.com/david14122720/Ipial_abogados.git
+   cd Ipial_abogados
+   ```
+2. Instalar dependencias:
+   ```sh
+   pnpm install
+   ```
+3. Iniciar servidor de desarrollo:
+   ```sh
+   pnpm run dev
+   ```
 
-## 🧞 Commands
+## 📦 Despliegue
 
-All commands are run from the root of the project, from a terminal:
+El proyecto está preparado para ser desplegado mediante Docker utilizando un Dockerfile optimizado para pnpm y Nginx, compatible con Dokploy.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+*Este proyecto es propiedad de Ipial Abogados.*
