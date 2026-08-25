@@ -93,7 +93,7 @@ const sections = [
 
 | Layer | What to Test | Approach |
 |-------|-------------|----------|
-| Build | `astro check` + `npm run build` no regression, LCP eager | `build_command` in `config.yaml` |
+| Build | `astro check` + `pnpm run build` no regression, LCP eager | `build_command` in `config.yaml` |
 | A11y | axe `color-contrast` on hero 0.14+scrim, `aria-current`, `focus-visible` | `axe-core` manual run, tab/Shift+Tab trap |
 | Visual QA | clamp no overflow at 320/375/428, card lift 200ms, underline scaleX | Viewport matrix in Chrome DevTools |
 | Interaction | IO active on `#servicios` top-third, ResizeObserver recalc, drawer overlay/Esc/anchor close, body lock | Manual scroll/resize/font-load; no JS framework tests (runner none per config) |
@@ -109,7 +109,7 @@ N/A — no routing, shell, subprocess, VCS/PR automation, executable-file classi
 2. `feat(nav): NavSpy + MobileMenu islands` — `NavSpy.tsx`, `MobileMenu.tsx`, `Header.astro`, `WhyUs` id fix.
 3. `feat(hover): card lift + underline motif + reduced-motion` — `Services/Team/WhyUs` polish.
 
-Rollback: revert 3→1; static `.astro` restored. No migrations. Each PR <120 lines, `npm run build` gate.
+Rollback: revert 3→1; static `.astro` restored. No migrations. Each PR <120 lines, `pnpm run build` gate.
 
 ## Open Questions
 

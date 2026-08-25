@@ -64,7 +64,7 @@ Balanced islands — 95% static, ~10kB JS (exploration §2).
 
 ## Rollback Plan
 
-Revert 3 PRs reverse (3→1); removal restores static `.astro`. No migrations. Check `npm run build`.
+Revert 3 PRs reverse (3→1); removal restores static `.astro`. No migrations. Check `pnpm run build`.
 
 ## Dependencies
 
