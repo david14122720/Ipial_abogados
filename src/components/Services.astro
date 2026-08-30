@@ -57,55 +57,99 @@ const francoPenal = [
   "Representación de víctimas.", // §4
 ] as const; // §4 Servicios de Derecho Penal y Procesal Penal
 ---
-<section id="servicios" class="py-20 bg-[#f9f9f9]">
+<section id="servicios" class="py-20" style="background: var(--color-surface-green)">
   <div class="max-w-[1200px] mx-auto px-6 md:px-16">
     <div class="text-center mb-10">
       <h2 class="text-[32px] leading-10 font-semibold text-[#1a1c1c] underline-motif underline-motif--center" style="font-family:'Libre Caslon Text',serif">Servicios Jurídicos Especializados</h2>
     </div>
 
-    <!-- Omar Enrique Ipial Ipial — Laboral y Seguridad Social §3 -->
-    <div data-abogado="omar" class="mb-12">
-      <h3 class="text-[22px] font-semibold text-[#1a1c1c] mb-1" style="font-family:'Libre Caslon Text',serif">Omar Enrique Ipial Ipial</h3>
-      <p class="text-sm font-semibold text-[#005243] tracking-wide mb-6">Especialista en Derecho Laboral y Seguridad Social</p>
+    <div class="services-board">
+      <!-- Omar Enrique Ipial Ipial — Laboral y Seguridad Social §3 -->
+      <div data-abogado="omar" class="mb-12">
+        <h3 class="text-[22px] font-semibold text-[#1a1c1c] mb-1" style="font-family:'Libre Caslon Text',serif">Omar Enrique Ipial Ipial</h3>
+        <p class="text-sm font-semibold text-[#005243] tracking-wide mb-6">Especialista en Derecho Laboral y Seguridad Social</p>
 
-      <div data-grupo="trabajadores" class="mb-8">
-        <h4 class="text-[18px] font-semibold text-[#1a1c1c] mb-3" style="font-family:'Libre Caslon Text',serif">Para trabajadores</h4>
-        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {omarTrabajadores.map((item) => (
-            <li class="bg-white border border-[#bec9c4]/30 rounded-lg p-4 border-l-2 border-l-[#005243] text-[14px] leading-6 text-[#1a1c1c]">{item}</li>
-          ))}
-        </ul>
+        <div data-grupo="trabajadores" class="mb-8">
+          <h4 class="text-[18px] font-semibold text-[#1a1c1c] mb-3" style="font-family:'Libre Caslon Text',serif">Para trabajadores</h4>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {omarTrabajadores.slice(0, 6).map((item) => (
+              <li class="bg-white border border-[#bec9c4]/30 rounded-lg p-4 border-l-2 border-l-[#005243] text-[14px] leading-6 text-[#1a1c1c]">{item}</li>
+            ))}
+          </ul>
+          <div id="grupo-trabajadores" class="grupo-extra">
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
+              {omarTrabajadores.slice(6).map((item) => (
+                <li class="bg-white border border-[#bec9c4]/30 rounded-lg p-4 border-l-2 border-l-[#005243] text-[14px] leading-6 text-[#1a1c1c]">{item}</li>
+              ))}
+            </ul>
+          </div>
+          <button data-grupo-toggle aria-expanded="false" aria-controls="grupo-trabajadores" class="mt-3 text-sm font-semibold text-[#005243] hover:text-[#1e6b5a] transition-[opacity,transform] duration-200">Leer más</button>
+        </div>
+
+        <div data-grupo="empleadores" class="mb-8">
+          <h4 class="text-[18px] font-semibold text-[#1a1c1c] mb-3" style="font-family:'Libre Caslon Text',serif">Para empleadores</h4>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {omarEmpleadores.slice(0, 6).map((item) => (
+              <li class="bg-white border border-[#bec9c4]/30 rounded-lg p-4 border-l-2 border-l-[#005243] text-[14px] leading-6 text-[#1a1c1c]">{item}</li>
+            ))}
+          </ul>
+          <div id="grupo-empleadores" class="grupo-extra">
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
+              {omarEmpleadores.slice(6).map((item) => (
+                <li class="bg-white border border-[#bec9c4]/30 rounded-lg p-4 border-l-2 border-l-[#005243] text-[14px] leading-6 text-[#1a1c1c]">{item}</li>
+              ))}
+            </ul>
+          </div>
+          <button data-grupo-toggle aria-expanded="false" aria-controls="grupo-empleadores" class="mt-3 text-sm font-semibold text-[#005243] hover:text-[#1e6b5a] transition-[opacity,transform] duration-200">Leer más</button>
+        </div>
+
+        <div data-grupo="pensionados" class="mb-2">
+          <h4 class="text-[18px] font-semibold text-[#1a1c1c] mb-3" style="font-family:'Libre Caslon Text',serif">Para pensionados</h4>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {omarPensionados.slice(0, 6).map((item) => (
+              <li class="bg-white border border-[#bec9c4]/30 rounded-lg p-4 border-l-2 border-l-[#005243] text-[14px] leading-6 text-[#1a1c1c]">{item}</li>
+            ))}
+          </ul>
+          <div id="grupo-pensionados" class="grupo-extra">
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
+              {omarPensionados.slice(6).map((item) => (
+                <li class="bg-white border border-[#bec9c4]/30 rounded-lg p-4 border-l-2 border-l-[#005243] text-[14px] leading-6 text-[#1a1c1c]">{item}</li>
+              ))}
+            </ul>
+          </div>
+          <button data-grupo-toggle aria-expanded="false" aria-controls="grupo-pensionados" class="mt-3 text-sm font-semibold text-[#005243] hover:text-[#1e6b5a] transition-[opacity,transform] duration-200">Leer más</button>
+        </div>
       </div>
 
-      <div data-grupo="empleadores" class="mb-8">
-        <h4 class="text-[18px] font-semibold text-[#1a1c1c] mb-3" style="font-family:'Libre Caslon Text',serif">Para empleadores</h4>
-        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {omarEmpleadores.map((item) => (
-            <li class="bg-white border border-[#bec9c4]/30 rounded-lg p-4 border-l-2 border-l-[#005243] text-[14px] leading-6 text-[#1a1c1c]">{item}</li>
-          ))}
-        </ul>
+      <!-- Franco Miller Ipial Ipial — Penal §4 -->
+      <div data-abogado="franco">
+        <h3 class="text-[22px] font-semibold text-[#1a1c1c] mb-1" style="font-family:'Libre Caslon Text',serif">Franco Miller Ipial Ipial</h3>
+        <p class="text-sm font-semibold text-[#005243] tracking-wide mb-4">Especialista en Derecho Penal y Procesal Penal</p>
+        <div data-grupo="penal">
+          <h4 class="text-[18px] font-semibold text-[#1a1c1c] mb-3" style="font-family:'Libre Caslon Text',serif">Servicios de Derecho Penal</h4>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {francoPenal.map((item) => (
+              <li class="bg-white border border-[#bec9c4]/30 rounded-lg p-4 border-l-2 border-l-[#005243] text-[14px] leading-6 text-[#1a1c1c]">{item}</li>
+            ))}
+          </ul>
+        </div>
       </div>
-
-      <div data-grupo="pensionados" class="mb-2">
-        <h4 class="text-[18px] font-semibold text-[#1a1c1c] mb-3" style="font-family:'Libre Caslon Text',serif">Para pensionados</h4>
-        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {omarPensionados.map((item) => (
-            <li class="bg-white border border-[#bec9c4]/30 rounded-lg p-4 border-l-2 border-l-[#005243] text-[14px] leading-6 text-[#1a1c1c]">{item}</li>
-          ))}
-        </ul>
-      </div>
-    </div>
-
-    <!-- Franco Miller Ipial Ipial — Penal §4 -->
-    <div data-abogado="franco">
-      <h3 class="text-[22px] font-semibold text-[#1a1c1c] mb-1" style="font-family:'Libre Caslon Text',serif">Franco Miller Ipial Ipial</h3>
-      <p class="text-sm font-semibold text-[#005243] tracking-wide mb-4">Especialista en Derecho Penal y Procesal Penal</p>
-      <h4 class="text-[18px] font-semibold text-[#1a1c1c] mb-3" style="font-family:'Libre Caslon Text',serif">Servicios de Derecho Penal</h4>
-      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        {francoPenal.map((item) => (
-          <li class="bg-white border border-[#bec9c4]/30 rounded-lg p-4 border-l-2 border-l-[#005243] text-[14px] leading-6 text-[#1a1c1c]">{item}</li>
-        ))}
-      </ul>
     </div>
   </div>
 </section>
+
+<script>
+  (() => {
+    const toggles = document.querySelectorAll('[data-grupo-toggle]');
+    toggles.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('aria-controls');
+        const panel = id ? document.getElementById(id) : null;
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        if (panel) panel.classList.toggle('is-expanded', !expanded);
+        btn.textContent = expanded ? 'Leer más' : 'Leer menos';
+      });
+    });
+  })();
+</script>
