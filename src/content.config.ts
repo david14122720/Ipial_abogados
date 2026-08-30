@@ -1,24 +1,30 @@
+// Taxonomía: Ipialabogados.md §2-§4 — fuente canónica. Enums estrictos; build falla si reingresa "Derecho Civil"/inventados (§6).
 import { defineCollection, z } from "astro:content";
 
 const servicios = defineCollection({
   type: "content",
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    icon: z.string().optional(),
-    order: z.number().default(0),
-  }),
+  schema: z
+    .object({
+      title: z.string(),
+      description: z.string().optional(),
+      icon: z.string().optional(),
+      grupo: z.enum(["trabajadores", "empleadores", "pensionados", "penal"]),
+      abogado: z.enum(["omar", "franco"]),
+      order: z.number().default(0),
+    })
+    .refine((v) => (v.abogado === "franco") === (v.grupo === "penal"), {
+      message: "§6 cross-attribution: franco ↔ penal debe coincidir",
+    }),
 });
 
 const abogados = defineCollection({
   type: "content",
   schema: z.object({
-    name: z.string(),
-    role: z.string(),
-    specialties: z.array(z.string()),
-    description: z.string(),
-    image: z.string().optional(),
-    academic: z.string().optional(),
+    name: z.enum(["Omar Enrique Ipial Ipial", "Franco Miller Ipial Ipial"]),
+    specialty: z.enum([
+      "Especialista en Derecho Laboral y Seguridad Social",
+      "Especialista en Derecho Penal y Procesal Penal",
+    ]),
     order: z.number().default(0),
   }),
 });
