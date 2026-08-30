@@ -37,4 +37,10 @@ Sitio web institucional para el estudio jurídico Ipial Abogados.
 El proyecto está preparado para ser desplegado mediante Docker utilizando un Dockerfile optimizado para pnpm y Nginx, compatible con Dokploy.
 
 ---
+## Fuente canónica
+
+**Ipialabogados.md — fuente canónica (225 líneas) — §3/§4**: este archivo es la única fuente autorizada para servicios y especialidades. `src/components/Services.astro`, `src/components/Team.astro`, `src/content.config.ts` y `src/content/**` deben transcribirlo verbatim (§6: sin invención ni atribución cruzada).
+
+---
+
 *Este proyecto es propiedad de Ipial Abogados.*

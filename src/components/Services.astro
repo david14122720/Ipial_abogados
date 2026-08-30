@@ -1,31 +1,111 @@
 ---
-const services = [
-  { title: "Derecho Civil", desc: "Asesoría integral en contratos, obligaciones, responsabilidad civil y resolución de disputas patrimoniales.", icon: "gavel", col: "" },
-  { title: "Familia", desc: "Acompañamiento legal sensible en divorcios, sucesiones, custodia y acuerdos familiares.", icon: "family", col: "" },
-  { title: "Laboral", desc: "Defensa de derechos laborales, contratos, seguridad social y conciliaciones obrero-patronales.", icon: "work", col: "" },
-  { title: "Administrativo y Disciplinario", desc: "Representación ante entidades del Estado, procesos disciplinarios y defensa en actuaciones administrativas, asegurando el debido proceso y la protección de sus derechos fundamentales.", icon: "account_balance", col: "md:col-span-2" },
-  { title: "Penal", desc: "Defensa técnica especializada en procesos penales, con rigor y estricto apego a las garantías constitucionales.", icon: "balance", col: "" },
-];
+// Fuente: Ipialabogados.md §3.1/§3.2/§3.3/§4 — fuente canónica, transcripción verbatim §6. No invención.
+const omarTrabajadores = [
+  "Derechos de petición.", // §3.1
+  "Acciones de tutela.", // §3.1
+  "Conciliaciones laborales.", // §3.1
+  "Representación y asesoría en procesos disciplinarios.", // §3.1
+  "Trámites pensionales.", // §3.1
+  "Revisión y liquidación de prestaciones sociales.", // §3.1
+  "Cobro de incapacidades ante entidades de seguridad social.", // §3.1
+  "Demandas y tutelas por fueros de estabilidad laboral reforzada.", // §3.1
+  "Demandas por accidentes o enfermedades laborales.", // §3.1
+  "Demandas laborales por violación al fuero sindical y circunstancial.", // §3.1
+  "Demandas laborales por contrato realidad.", // §3.1
+  "Demandas por no pago de prestaciones sociales.", // §3.1
+  "Demandas por despidos sin justa causa.", // §3.1
+] as const; // §3.1 Servicios para trabajadores
+
+const omarEmpleadores = [
+  "Asesoría en pensiones.", // §3.2
+  "Asesoría en seguridad social.", // §3.2
+  "Asesoría en derecho laboral.", // §3.2
+  "Asesoría en vinculaciones laborales.", // §3.2
+  "Asesoría en desvinculaciones laborales.", // §3.2
+  "Elaboración y asesoría sobre contratos laborales.", // §3.2
+  "Reglamentos internos de trabajo.", // §3.2
+  "Asesoría en procesos disciplinarios.", // §3.2
+  "Asesoría en manejo de incapacidades.", // §3.2
+  "Asesoría en trabajadores con fueros de estabilidad laboral reforzada.", // §3.2
+  "Representación y defensa en procesos judiciales.", // §3.2
+  "Capacitaciones y actualización en la normatividad laboral.", // §3.2
+] as const; // §3.2 Servicios para empleadores
+
+const omarPensionados = [
+  "Reliquidaciones pensionales.", // §3.3
+  "Estudios pensionales.", // §3.3
+  "Cálculos actuariales.", // §3.3
+  "Asesoría y trámite para reconocimiento de pensión de vejez.", // §3.3
+  "Asesoría y trámite para reconocimiento de pensión de sobrevivientes.", // §3.3
+  "Asesoría y trámite para reconocimiento de pensión de invalidez.", // §3.3
+  "Sustituciones pensionales.", // §3.3
+  "Devolución de aportes.", // §3.3
+  "Demandas por ineficacia del traslado.", // §3.3
+  "Demandas para el reconocimiento de pensiones.", // §3.3
+] as const; // §3.3 Servicios para pensionados
+
+const francoPenal = [
+  "Representación judicial y asesoría en asuntos y procesos penales.", // §4
+  "Defensa y representación en audiencias preliminares.", // §4
+  "Defensa y representación en audiencias de juicio oral.", // §4
+  "Sustitución de medidas de aseguramiento.", // §4
+  "Trámite para obtener libertad condicional.", // §4
+  "Trámite para obtener prisión domiciliaria.", // §4
+  "Devolución provisional de vehículos.", // §4
+  "Devolución definitiva de vehículos.", // §4
+  "Traslados a resguardos indígenas.", // §4
+  "Representación de víctimas.", // §4
+] as const; // §4 Servicios de Derecho Penal y Procesal Penal
 ---
 <section id="servicios" class="py-20 bg-[#f9f9f9]">
   <div class="max-w-[1200px] mx-auto px-6 md:px-16">
     <div class="text-center mb-10">
       <h2 class="text-[32px] leading-10 font-semibold text-[#1a1c1c] underline-motif underline-motif--center" style="font-family:'Libre Caslon Text',serif">Servicios Jurídicos Especializados</h2>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
-      {services.map((s) => (
-        <div class={`bg-white border border-[#bec9c4]/30 p-8 rounded-lg hover:shadow-[0_10px_30px_rgba(26,28,28,0.06)] transition-shadow ${s.col}`}>
-          <div class="text-[#005243] mb-4">
-            {s.icon === "gavel" && <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 4l6 6-9 9H5v-6l9-9z"/><path d="M3 21h10"/><path d="M14 4l2-2 6 6-2 2z"/></svg>}
-            {s.icon === "family" && <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="7" r="3"/><path d="M8 14c-1 1-1 3 0 4M16 14c1 1 1 3 0 4"/><path d="M12 10v6"/><path d="M7 21h10"/></svg>}
-            {s.icon === "work" && <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>}
-            {s.icon === "account_balance" && <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 21h18"/><path d="M3 7h18"/><path d="M12 3l9 4H3z"/><path d="M7 7v10M12 7v10M17 7v10"/></svg>}
-            {s.icon === "balance" && <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v18"/><path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7l4 10h2"/><path d="M17 7l4 10h2"/></svg>}
-          </div>
-          <h3 class="text-[20px] font-semibold text-[#1a1c1c] mb-2" style="font-family:'Libre Caslon Text',serif">{s.title}</h3>
-          <p class="text-[15px] leading-6 text-[#5b5f61]">{s.desc}</p>
-        </div>
-      ))}
+
+    <!-- Omar Enrique Ipial Ipial — Laboral y Seguridad Social §3 -->
+    <div data-abogado="omar" class="mb-12">
+      <h3 class="text-[22px] font-semibold text-[#1a1c1c] mb-1" style="font-family:'Libre Caslon Text',serif">Omar Enrique Ipial Ipial</h3>
+      <p class="text-sm font-semibold text-[#005243] tracking-wide mb-6">Especialista en Derecho Laboral y Seguridad Social</p>
+
+      <div data-grupo="trabajadores" class="mb-8">
+        <h4 class="text-[18px] font-semibold text-[#1a1c1c] mb-3" style="font-family:'Libre Caslon Text',serif">Para trabajadores</h4>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {omarTrabajadores.map((item) => (
+            <li class="bg-white border border-[#bec9c4]/30 rounded-lg p-4 border-l-2 border-l-[#005243] text-[14px] leading-6 text-[#1a1c1c]">{item}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div data-grupo="empleadores" class="mb-8">
+        <h4 class="text-[18px] font-semibold text-[#1a1c1c] mb-3" style="font-family:'Libre Caslon Text',serif">Para empleadores</h4>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {omarEmpleadores.map((item) => (
+            <li class="bg-white border border-[#bec9c4]/30 rounded-lg p-4 border-l-2 border-l-[#005243] text-[14px] leading-6 text-[#1a1c1c]">{item}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div data-grupo="pensionados" class="mb-2">
+        <h4 class="text-[18px] font-semibold text-[#1a1c1c] mb-3" style="font-family:'Libre Caslon Text',serif">Para pensionados</h4>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {omarPensionados.map((item) => (
+            <li class="bg-white border border-[#bec9c4]/30 rounded-lg p-4 border-l-2 border-l-[#005243] text-[14px] leading-6 text-[#1a1c1c]">{item}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Franco Miller Ipial Ipial — Penal §4 -->
+    <div data-abogado="franco">
+      <h3 class="text-[22px] font-semibold text-[#1a1c1c] mb-1" style="font-family:'Libre Caslon Text',serif">Franco Miller Ipial Ipial</h3>
+      <p class="text-sm font-semibold text-[#005243] tracking-wide mb-4">Especialista en Derecho Penal y Procesal Penal</p>
+      <h4 class="text-[18px] font-semibold text-[#1a1c1c] mb-3" style="font-family:'Libre Caslon Text',serif">Servicios de Derecho Penal</h4>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {francoPenal.map((item) => (
+          <li class="bg-white border border-[#bec9c4]/30 rounded-lg p-4 border-l-2 border-l-[#005243] text-[14px] leading-6 text-[#1a1c1c]">{item}</li>
+        ))}
+      </ul>
     </div>
   </div>
 </section>
