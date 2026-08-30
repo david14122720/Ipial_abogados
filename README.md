@@ -39,7 +39,7 @@ El proyecto está preparado para ser desplegado mediante Docker utilizando un Do
 ---
 ## Fuente canónica
 
-**Ipialabogados.md — fuente canónica (225 líneas) — §3/§4**: este archivo es la única fuente autorizada para servicios y especialidades. `src/components/Services.astro`, `src/components/Team.astro`, `src/content.config.ts` y `src/content/**` deben transcribirlo verbatim (§6: sin invención ni atribución cruzada).
+**Ipialabogados.md — fuente canónica (224 líneas) — §3/§4**: este archivo es la única fuente autorizada para servicios y especialidades. `src/components/Services.astro`, `src/components/Team.astro`, `src/content.config.ts` y `src/content/**` deben transcribirlo verbatim (§6: sin invención ni atribución cruzada).
 
 ---
 
