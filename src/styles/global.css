@@ -13,6 +13,7 @@
   --color-primary: #005243;
   --color-primary-container: #1e6b5a;
   --color-surface: #f9f9f9;
+  --color-surface-green: #f2f7f5;
   --color-on-surface: #1a1c1c;
   --color-secondary: #5b5f61;
   --color-outline: #6f7975;
@@ -48,4 +49,65 @@ h1, h2, h3, h4 {
 .underline-motif--center::after {
   left: 50%;
   transform: translateX(-50%);
+}
+
+/* Services board — unified tinted wrapper #f2f7f5 */
+.services-board {
+  background: var(--color-surface-green);
+  border-radius: 1rem;
+  border: 1px solid rgba(190, 201, 196, 0.2);
+  padding: 2rem;
+}
+
+@media (min-width: 768px) {
+  .services-board { padding: 2.5rem; }
+}
+
+/* Progressive disclosure — collapsed wrapper */
+.grupo-extra {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 200ms ease, opacity 200ms ease;
+}
+
+.grupo-extra.is-expanded {
+  max-height: 2000px;
+  opacity: 1;
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(2px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header scrolled state — bg #005243 with white text */
+#site-header.is-scrolled {
+  background: #005243 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+#site-header.is-scrolled nav a {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+#site-header.is-scrolled nav a:hover {
+  color: #ffffff !important;
+}
+
+#site-header.is-scrolled nav a[class*="border-[#005243]"] {
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+#site-header.is-scrolled .header-menu-icon {
+  color: #ffffff !important;
+}
+
+/* Reduced-motion guard — MUST be last */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
