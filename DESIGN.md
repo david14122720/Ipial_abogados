@@ -1,5 +1,6 @@
 ---
-name: Lex Imperial
+name: Lex Emerald
+stitch_id: '8756458185519766468'
 colors:
   surface: '#f8f9f9'
   surface-dim: '#d9dada'
@@ -15,8 +16,9 @@ colors:
   inverse-on-surface: '#f0f1f1'
   outline: '#717974'
   outline-variant: '#c0c8c3'
-  surface-tint: '#396756'
-  primary: '#00261b'
+  surface-tint: '#1e6a54'
+  primary: '#004a38'
+  emerald-deep: '#14634d'
   on-primary: '#ffffff'
   primary-container: '#0b3d2e'
   on-primary-container: '#79a894'
@@ -48,29 +50,40 @@ colors:
   background: '#f8f9f9'
   on-background: '#191c1c'
   surface-variant: '#e1e3e3'
-  platinum-silver: '#B8B9BA'
-  forest-deep: '#05261D'
-  teal-accent: '#148F77'
-  charcoal-text: '#2C3E50'
+  silver-metallic: '#A8ADB0'
+  slate-charcoal: '#2C3333'
+  whatsapp-green: '#25D366'
+  facebook-blue: '#1877F2'
+  # Legacy shims (Imperial → Emerald aliases)
+  platinum-silver: '#A8ADB0'
+  forest-deep: '#004a38'
+  teal-accent: '#14634d'
+  charcoal-text: '#2C3333'
 typography:
-  display-lg:
-    fontFamily: EB Garamond
+  headline-xl:
+    fontFamily: Libre Caslon Text
     fontSize: 48px
-    fontWeight: '600'
+    fontWeight: '700'
+    lineHeight: 56px
+    letterSpacing: -0.02em
+  display-lg:
+    fontFamily: Libre Caslon Text
+    fontSize: 48px
+    fontWeight: '700'
     lineHeight: 56px
     letterSpacing: -0.02em
   headline-lg:
-    fontFamily: EB Garamond
+    fontFamily: Libre Caslon Text
     fontSize: 32px
     fontWeight: '500'
     lineHeight: 40px
   headline-lg-mobile:
-    fontFamily: EB Garamond
+    fontFamily: Libre Caslon Text
     fontSize: 28px
     fontWeight: '500'
     lineHeight: 36px
   headline-md:
-    fontFamily: EB Garamond
+    fontFamily: Libre Caslon Text
     fontSize: 24px
     fontWeight: '500'
     lineHeight: 32px
@@ -97,16 +110,16 @@ typography:
     lineHeight: 16px
 rounded:
   sm: 0.125rem
-  DEFAULT: 0.25rem
-  md: 0.375rem
-  lg: 0.5rem
-  xl: 0.75rem
+  DEFAULT: 0.125rem
+  lg: 0.25rem
+  xl: 0.5rem
   full: 9999px
 spacing:
   unit: 4px
   gutter: 24px
   margin-edge: 40px
   section-padding: 80px
+  section-gap: 80px
   container-max: 1200px
 ---
 

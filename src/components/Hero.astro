@@ -1,9 +1,10 @@
 ---
 import { Image } from "astro:assets";
-import principal from "../assets/principal.jpeg";
+import principal from "../assets/principal.webp";
+import logo from "../assets/logo.webp";
 import { CONTACT } from "../consts.ts";
 ---
-<section id="inicio" class="relative py-12 md:py-20 pt-20 min-h-[78vh] flex items-center justify-center bg-surface overflow-hidden">
+<section id="inicio" class="relative min-h-[78vh] flex items-center justify-center overflow-hidden">
   <div class="absolute inset-0" aria-hidden="true">
     <Image
       src={principal}
@@ -14,20 +15,40 @@ import { CONTACT } from "../consts.ts";
       quality={75}
       loading="eager"
       fetchpriority="high"
-      class="w-full h-full object-cover opacity-[0.07] grayscale"
+      class="w-full h-full object-cover object-center"
     />
+    <div class="absolute inset-0" style="background: rgba(0,0,0,0.5)"></div>
   </div>
-  <div class="max-w-[1200px] mx-auto px-6 md:px-10 relative z-10 text-center flex flex-col items-center">
-    <p class="text-[14px] leading-5 font-semibold tracking-[0.05em] uppercase text-primary mb-4" style="font-family:'Hanken Grotesk',sans-serif;letter-spacing:0.05em">Firma de Abogados · Ipiales, Nariño</p>
-    <h1 class="text-[32px] md:text-[48px] leading-[36px] md:leading-[56px] font-semibold text-on-surface mb-6 max-w-4xl" style="font-family:'EB Garamond',serif;letter-spacing:-0.02em">
-      Ipial_abogados: <br /><span class="text-primary">Excelencia Jurídica</span> y Compromiso Humano
-    </h1>
-    <p class="text-[17px] md:text-[18px] leading-7 text-secondary mb-8 max-w-2xl">
+  <div class="relative z-10 max-w-container-max mx-auto px-gutter py-12 md:py-20 flex flex-col items-center text-center w-full">
+    <div class="h-32 w-32 rounded-full overflow-hidden shadow-sm bg-surface-container-lowest flex-shrink-0 mb-6">
+      <Image
+        src={logo}
+        alt="Ipial Abogados"
+        widths={[128, 256]}
+        sizes="128px"
+        format="webp"
+        quality={80}
+        loading="eager"
+        class="w-full h-full object-cover"
+      />
+    </div>
+    <h1 class="text-headline-xl text-white mb-6 max-w-4xl" style="font-family:'Libre Caslon Text',serif;">Autoridad, Precisión y Legado</h1>
+    <p class="text-body-lg text-white max-w-2xl mb-8 opacity-95">
       Asesoría legal especializada para brindarte la tranquilidad y seguridad que mereces, fundamentada en la integridad y el rigor profesional.
     </p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center mt-2">
-      <a href={CONTACT.waPrimaryHref} target="_blank" rel="noopener noreferrer" class="bg-forest-deep text-white px-8 py-3 rounded-sm text-sm font-semibold hover:bg-teal-accent transition-colors duration-200 text-center">Contactar por WhatsApp</a>
-      <a href="#servicios" class="bg-transparent border border-platinum-silver text-on-surface px-8 py-3 rounded-sm text-sm font-semibold hover:bg-surface-container-low transition-colors duration-200 text-center">Nuestros Servicios</a>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a
+        href={CONTACT.waPrimaryHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-emerald-deep text-white px-8 py-3 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity duration-200 text-center focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+        >Contactar por WhatsApp</a
+      >
+      <a
+        href="#servicios"
+        class="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-3 rounded-full text-sm font-semibold hover:bg-white/20 transition-colors duration-200 text-center focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+        >Nuestros Servicios</a
+      >
     </div>
   </div>
   <div id="header-sentinel" aria-hidden="true" class="h-px w-full absolute bottom-0 left-0"></div>

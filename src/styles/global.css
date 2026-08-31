@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
-/* Self-hosted fonts via @fontsource — canonical: EB Garamond + Hanken Grotesk only */
+/* Self-hosted fonts via @fontsource — Emerald: Libre Caslon Text 700 + Hanken Grotesk + Material Symbols */
 @import "@fontsource/hanken-grotesk/400.css";
 @import "@fontsource/hanken-grotesk/500.css";
 @import "@fontsource/hanken-grotesk/600.css";
-@import "@fontsource/eb-garamond/400.css";
-@import "@fontsource/eb-garamond/500.css";
-@import "@fontsource/eb-garamond/600.css";
+@import "@fontsource/libre-caslon-text/700.css";
+@import "@fontsource/material-symbols-outlined/400.css";
 
 @theme {
-  --color-primary: #00261b;
+  --color-primary: #004a38;
   --color-primary-container: #0b3d2e;
+  --color-emerald-deep: #14634d;
   --color-surface: #f8f9f9;
   --color-surface-bright: #f8f9f9;
   --color-surface-dim: #d9dada;
@@ -20,7 +20,7 @@
   --color-surface-container-high: #e7e8e8;
   --color-surface-container-highest: #e1e3e3;
   --color-surface-variant: #e1e3e3;
-  --color-surface-tint: #396756;
+  --color-surface-tint: #1e6a54;
   --color-on-surface: #191c1c;
   --color-on-surface-variant: #414944;
   --color-inverse-surface: #2e3131;
@@ -28,36 +28,56 @@
   --color-secondary: #5e5e5e;
   --color-outline: #717974;
   --color-outline-variant: #c0c8c3;
-  --color-platinum-silver: #B8B9BA;
-  --color-forest-deep: #05261D;
-  --color-teal-accent: #148F77;
-  --color-charcoal-text: #2C3E50;
+  --color-silver-metallic: #A8ADB0;
+  --color-slate-charcoal: #2C3333;
+  --color-whatsapp-green: #25D366;
+  --color-facebook-blue: #1877F2;
   --color-background: #f8f9f9;
   --color-on-background: #191c1c;
 
+  /* Legacy shims — Imperial aliases → Emerald (grace period PR-1) */
+  --color-forest-deep: var(--color-primary);
+  --color-platinum-silver: var(--color-silver-metallic);
+  --color-platinum: var(--color-silver-metallic);
+  --color-teal-accent: var(--color-emerald-deep);
+  --color-charcoal-text: var(--color-slate-charcoal);
+
   /* Typography */
+  --text-headline-xl: 48px;
+  --text-headline-xl--line-height: 56px;
+  --text-headline-xl--letter-spacing: -0.02em;
+  --text-headline-xl--font-weight: 700;
   --text-display-lg: 48px;
   --text-display-lg--line-height: 56px;
   --text-display-lg--letter-spacing: -0.02em;
   --text-headline-lg: 32px;
   --text-headline-lg--line-height: 40px;
+  --text-headline-md: 20px;
+  --text-headline-md--line-height: 28px;
+  --text-headline-md--font-weight: 600;
   --text-body-lg: 18px;
   --text-body-lg--line-height: 28px;
+  --text-body-md: 16px;
+  --text-body-md--line-height: 24px;
   --text-label-md: 14px;
   --text-label-md--line-height: 20px;
   --text-label-md--letter-spacing: 0.05em;
   --text-label-md--font-weight: 600;
+  --text-label-sm: 12px;
+  --text-label-sm--line-height: 16px;
 
-  /* Radii */
+  /* Radii — Emerald: 0.125 / 0.25 / 0.5 / full */
   --radius-sm: 0.125rem;
-  --radius: 0.25rem;
-  --radius-md: 0.375rem;
-  --radius-lg: 0.5rem;
+  --radius: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 9999px;
 
   /* Spacing */
   --spacing-gutter: 24px;
   --spacing-margin-edge: 40px;
   --spacing-section-padding: 80px;
+  --spacing-section-gap: 80px;
   --spacing-container-max: 1200px;
 }
 
@@ -70,7 +90,7 @@ body {
 }
 
 h1, h2, h3, h4, .font-serif {
-  font-family: 'EB Garamond', serif;
+  font-family: 'Libre Caslon Text', serif;
 }
 
 .underline-motif {
@@ -85,16 +105,16 @@ h1, h2, h3, h4, .font-serif {
   left: 0;
   width: 40px;
   height: 2px;
-  background-color: var(--color-forest-deep);
+  background-color: var(--color-emerald-deep);
 }
 .underline-motif--center::after {
   left: 50%;
   transform: translateX(-50%);
 }
 
-/* Design System Divider — Lex Imperial 1px Platinum */
+/* Design System Divider — Lex Emerald 1px Silver */
 .section-divider {
-  border-top: 1px solid var(--color-platinum-silver);
+  border-top: 1px solid var(--color-silver-metallic);
 }
 
 /* Container — 1200 max, centered */
@@ -103,11 +123,18 @@ h1, h2, h3, h4, .font-serif {
   margin-inline: auto;
 }
 
-/* Cards — White bg + 1px Platinum border, no shadow (Lex Imperial) */
+/* Cards — Emerald: rounded-lg border silver shadow-sm + hover (motion: only transform/opacity 200ms, translate ≤2px) */
 .card-lex {
   background: var(--color-surface-container-lowest);
-  border: 1px solid var(--color-platinum-silver);
-  border-radius: var(--radius);
+  border: 1px solid var(--color-silver-metallic);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 200ms ease, transform 200ms ease, opacity 200ms ease;
+}
+.card-lex:hover {
+  box-shadow: 0 10px 30px rgba(20, 99, 77, 0.08);
+  border-color: var(--color-silver-metallic);
+  transform: translateY(-2px);
 }
 
 /* Services board — minimalist structured look */
@@ -140,7 +167,7 @@ h1, h2, h3, h4, .font-serif {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Header scrolled state — refined high-trust look */
+/* Header scrolled state — Emerald trust */
 #site-header.is-scrolled {
   background: var(--color-primary) !important;
   border-color: rgba(255, 255, 255, 0.12) !important;
@@ -154,7 +181,7 @@ h1, h2, h3, h4, .font-serif {
   color: #ffffff !important;
 }
 
-#site-header.is-scrolled nav a[class*="border-[#005243]"] {
+#site-header.is-scrolled nav a[class*="border-primary"] {
   color: #ffffff !important;
   border-color: #ffffff !important;
 }
@@ -163,26 +190,34 @@ h1, h2, h3, h4, .font-serif {
   color: #ffffff !important;
 }
 
-/* Focus-visible — a11y (Forest Deep + Teal accent) */
+/* Focus-visible — a11y (Emerald Deep) */
 :focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--color-emerald-deep);
   outline-offset: 2px;
 }
 
-/* Button hover — Forest Deep → Teal #148F77 */
-.btn-primary:hover { background: var(--color-teal-accent); }
+/* Button hover — Emerald Deep */
+.btn-primary:hover { background: var(--color-emerald-deep); }
 
-/* Chip / tag — light Silver/Charcoal */
+/* Chip / tag — Emerald motif */
 .chip {
   background: var(--color-surface-container-high);
-  color: var(--color-charcoal-text);
-  border: 1px solid var(--color-platinum-silver);
+  color: var(--color-slate-charcoal);
+  border: 1px solid var(--color-silver-metallic);
+  border-radius: var(--radius-full);
+  padding: 0.25rem 0.75rem;
+  font-size: var(--text-label-sm);
+  line-height: var(--text-label-sm--line-height);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
 }
 
-/* Lex list — Forest dashes */
+/* Lex list — Emerald dashes */
 .list-lex li::before {
   content: '—';
-  color: var(--color-forest-deep);
+  color: var(--color-emerald-deep);
   margin-right: 0.5rem;
 }
 

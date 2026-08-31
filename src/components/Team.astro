@@ -1,31 +1,30 @@
 ---
 import { Image } from "astro:assets";
-import principal from "../assets/principal.jpeg";
+import principal from "../assets/principal.webp";
+import { CONTACT } from "../consts.ts";
 // Fuente: Ipialabogados.md §2 — verbatim §6. Nombres y especialidades exactos, sin bios inventadas.
 ---
-<section id="abogados" class="py-12 md:py-20 bg-surface section-divider">
-  <div class="max-w-[1200px] mx-auto px-6 md:px-10">
+<section id="abogados" class="py-section-gap px-gutter bg-surface">
+  <div class="max-w-container-max mx-auto">
     <div class="text-center">
-      <h2 class="text-[32px] leading-10 font-semibold text-on-surface underline-motif underline-motif--center">Nuestro Equipo</h2>
+      <h2 class="text-headline-lg text-primary">Nuestro Equipo</h2>
     </div>
-    <div class="grid md:grid-cols-2 gap-6 mt-10">
-      <div class="flex flex-col sm:flex-row gap-4 items-start p-6 border border-platinum-silver rounded-sm bg-white">
-        <div class="w-32 h-32 flex-shrink-0 bg-surface-container-low rounded-sm overflow-hidden">
-          <Image src={principal} alt="Omar Enrique Ipial Ipial" widths={[128, 256]} sizes="128px" format="webp" quality={75} loading="lazy" class="w-full h-full object-cover grayscale" />
+    <div class="grid md:grid-cols-2 gap-8 mt-10 max-w-4xl mx-auto">
+      <div class="flex flex-col items-center text-center p-6">
+        <div class="w-64 h-64 rounded-full overflow-hidden shadow-md bg-surface-container-low flex-shrink-0">
+          <Image src={principal} alt="Omar Enrique Ipial Ipial" widths={[256, 512]} sizes="256px" format="webp" quality={75} loading="lazy" class="w-full h-full object-cover" />
         </div>
-        <div>
-          <h3 class="text-[20px] font-semibold text-on-surface">Omar Enrique Ipial Ipial</h3>
-          <p class="text-xs font-semibold text-primary mt-1 mb-2 tracking-widest uppercase">Especialista en Derecho Laboral y Seguridad Social</p>
-        </div>
+        <h3 class="text-headline-md text-primary mt-6">Omar Enrique Ipial Ipial</h3>
+        <p class="text-body-md text-primary mt-1">Especialista en Derecho Laboral y Seguridad Social</p>
+        <a href={CONTACT.waPrimaryHref} target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 bg-whatsapp-green text-white px-5 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity focus-visible:outline-2 focus-visible:outline-emerald-deep focus-visible:outline-offset-2">WhatsApp</a>
       </div>
-      <div class="flex flex-col sm:flex-row gap-4 items-start p-6 border border-platinum-silver rounded-sm bg-white">
-        <div class="w-32 h-32 flex-shrink-0 bg-surface-container-low rounded-sm overflow-hidden">
-          <Image src={principal} alt="Franco Miller Ipial Ipial" widths={[128, 256]} sizes="128px" format="webp" quality={75} loading="lazy" class="w-full h-full object-cover grayscale" />
+      <div class="flex flex-col items-center text-center p-6">
+        <div class="w-64 h-64 rounded-full overflow-hidden shadow-md bg-surface-container-low flex-shrink-0">
+          <Image src={principal} alt="Franco Miller Ipial Ipial" widths={[256, 512]} sizes="256px" format="webp" quality={75} loading="lazy" class="w-full h-full object-cover" />
         </div>
-        <div>
-          <h3 class="text-[20px] font-semibold text-on-surface">Franco Miller Ipial Ipial</h3>
-          <p class="text-xs font-semibold text-primary mt-1 mb-2 tracking-widest uppercase">Especialista en Derecho Penal y Procesal Penal</p>
-        </div>
+        <h3 class="text-headline-md text-primary mt-6">Franco Miller Ipial Ipial</h3>
+        <p class="text-body-md text-primary mt-1">Especialista en Derecho Penal y Procesal Penal</p>
+        <a href={CONTACT.waPrimaryHref} target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 bg-whatsapp-green text-white px-5 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity focus-visible:outline-2 focus-visible:outline-emerald-deep focus-visible:outline-offset-2">WhatsApp</a>
       </div>
     </div>
   </div>

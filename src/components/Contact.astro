@@ -1,40 +1,48 @@
 ---
 import { CONTACT } from "../consts.ts";
 ---
-<section id="contacto" class="py-12 md:py-20 bg-surface section-divider">
-  <div class="max-w-[1200px] mx-auto px-6 md:px-10">
-    <div class="grid md:grid-cols-2 gap-12 md:gap-20">
+<section id="contacto" class="py-section-gap px-gutter bg-surface-container-lowest">
+  <div class="max-w-container-max mx-auto">
+    <div class="grid lg:grid-cols-2 gap-12 items-start">
+      <!-- Info column -->
       <div>
-        <h2 class="text-[32px] leading-10 font-semibold text-on-surface underline-motif">Contacto</h2>
+        <h2 class="headline-md text-primary underline-motif">Conéctate</h2>
+        <p class="body-md text-secondary mt-4">Estamos listos para asesorarte. Escríbenos o visítanos en Ipiales.</p>
         <ul class="space-y-6 mt-8">
           <li class="flex items-start gap-4">
-            <span class="text-primary mt-1"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-5 7-11a7 7 0 1 0-14 0c0 6 7 11 7 11z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <span class="text-primary mt-1" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-5 7-11a7 7 0 1 0-14 0c0 6 7 11 7 11z"/><circle cx="12" cy="10" r="3"/></svg></span>
             <div>
-              <p class="text-sm font-semibold text-on-surface tracking-wide">Dirección</p>
-              <p class="text-[15px] text-secondary">{CONTACT.address.full}</p>
+              <p class="label-sm text-on-surface">Dirección</p>
+              <p class="body-md text-secondary">{CONTACT.address.full}</p>
+              <p class="body-md text-secondary">{CONTACT.address.street} — {CONTACT.address.city}, {CONTACT.address.region}</p>
             </div>
           </li>
           <li class="flex items-start gap-4">
-            <span class="text-primary mt-1"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5 12V9a2 2 0 0 1 2-2h3"/></svg></span>
+            <span class="text-primary mt-1" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5 12V9a2 2 0 0 1 2-2h3"/><circle cx="12" cy="12" r="10" opacity="0"/></svg></span>
             <div>
-              <p class="text-sm font-semibold text-on-surface tracking-wide">Líneas de Atención (WhatsApp)</p>
-              <p class="text-[15px] text-secondary"><a href={CONTACT.waPrimaryHref} target="_blank" rel="noopener noreferrer" aria-label={`Contactar por WhatsApp al ${CONTACT.whatsappPrimary}`} class="hover:text-primary transition-colors duration-200">{CONTACT.displayPrimary}</a></p>
-              <p class="text-[15px] text-secondary"><a href={CONTACT.waSecondaryHref} target="_blank" rel="noopener noreferrer" aria-label={`Contactar por WhatsApp al ${CONTACT.whatsappSecondary}`} class="hover:text-primary transition-colors duration-200">{CONTACT.displaySecondary}</a></p>
+              <p class="label-sm text-on-surface">Líneas de Atención (WhatsApp)</p>
+              <p class="body-md text-secondary"><a href={CONTACT.waPrimaryHref} target="_blank" rel="noopener noreferrer" aria-label={`Contactar por WhatsApp al ${CONTACT.whatsappPrimary}`} class="hover:text-primary transition-[transform,opacity] duration-200">{CONTACT.displayPrimary}</a> · <a href={CONTACT.telPrimary} class="hover:text-primary transition-[transform,opacity] duration-200">{CONTACT.displayPrimary}</a></p>
+              <p class="body-md text-secondary"><a href={CONTACT.waSecondaryHref} target="_blank" rel="noopener noreferrer" aria-label={`Contactar por WhatsApp al ${CONTACT.whatsappSecondary}`} class="hover:text-primary transition-[transform,opacity] duration-200">{CONTACT.displaySecondary}</a> · <a href={CONTACT.telSecondary} class="hover:text-primary transition-[transform,opacity] duration-200">{CONTACT.displaySecondary}</a></p>
             </div>
           </li>
           <li class="flex items-start gap-4">
-            <span class="text-primary mt-1"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+            <span class="text-primary mt-1" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
             <div>
-              <p class="text-sm font-semibold text-on-surface tracking-wide">Horario de Atención</p>
-              <p class="text-[15px] text-secondary">{CONTACT.horario}</p>
+              <p class="label-sm text-on-surface">Horario de Atención</p>
+              <p class="body-md text-secondary">{CONTACT.horario}</p>
             </div>
           </li>
         </ul>
-        <a href={CONTACT.waPrimaryHref} target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" class="inline-flex mt-8 bg-primary text-white px-8 py-3 rounded-sm text-sm font-semibold hover:bg-teal-accent transition-colors duration-200">Escribir por WhatsApp</a>
+        <div class="flex flex-wrap gap-3 mt-8">
+          <a href={CONTACT.waPrimaryHref} target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" class="inline-flex items-center gap-2 bg-whatsapp-green text-white px-6 py-3 rounded-full label-sm hover:opacity-90 transition-[transform,opacity] duration-200 hover:scale-[1.02]">Escribir por WhatsApp</a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Ipial Abogados" class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full label-sm transition-[transform,opacity] duration-200 hover:opacity-90" style="background:#1877F2">Facebook</a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Ipial Abogados" class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full label-sm transition-[transform,opacity] duration-200 hover:opacity-90" style="background: linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5)">Instagram</a>
+        </div>
       </div>
-      <div data-map="placeholder" class="w-full h-80 bg-surface-container-low rounded-sm border border-platinum-silver flex items-center justify-center overflow-hidden">
+      <!-- Map placeholder -->
+      <div data-map="placeholder" class="w-full h-96 rounded-lg border border-silver-metallic bg-surface-container-low flex items-center justify-center overflow-hidden">
         <div class="text-center p-6">
-          <p class="text-secondary text-sm">Mapa — {CONTACT.address.street}, {CONTACT.address.city}, {CONTACT.address.region}</p>
+          <p class="label-sm text-secondary">Mapa — {CONTACT.address.street}, {CONTACT.address.city}, {CONTACT.address.region}</p>
           <p class="text-xs text-outline mt-2">Integración de mapa disponible al configurar ubicación exacta</p>
         </div>
       </div>
