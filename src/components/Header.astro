@@ -1,9 +1,11 @@
 ---
+import { Image } from "astro:assets";
+import logo from "../assets/logo.jpeg";
 ---
 <header id="site-header" class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur border-b border-outline-variant/30">
   <div class="max-w-[1200px] mx-auto flex justify-between items-center px-6 md:px-10 h-20" style="margin-left:auto;margin-right:auto">
-    <a href="#inicio" class="flex items-center gap-2">
-      <img src="/logo.jpeg" alt="Ipial Abogados" class="h-11 w-auto object-contain" width="200" height="61" />
+    <a href="#inicio" class="flex items-center gap-2" aria-label="Ipial Abogados — Inicio">
+      <Image src={logo} alt="Ipial Abogados" widths={[120, 200]} sizes="120px" format="webp" quality={80} loading="eager" class="h-11 w-auto object-contain" width={200} height={61} />
     </a>
     <nav class="hidden md:flex gap-6 items-center text-[15px]" aria-label="Navegación principal">
       <a href="#inicio" aria-current="page" class="text-primary border-b-2 border-primary pb-1 font-semibold">Inicio</a>
@@ -37,7 +39,6 @@
     const overlay = document.getElementById('mobile-overlay');
     if (!header) return;
 
-    // Scroll sentinel
     const toggle = (scrolled) => header.classList.toggle('is-scrolled', scrolled);
     if (sentinel && 'IntersectionObserver' in window) {
       const obs = new IntersectionObserver(
@@ -51,7 +52,6 @@
       onScroll();
     }
 
-    // Drawer vanilla
     if (btn && drawer) {
       const setOpen = (open) => {
         btn.setAttribute('aria-expanded', String(open));

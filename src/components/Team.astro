@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import principal from "../assets/principal.jpeg";
 // Fuente: Ipialabogados.md §2 — verbatim §6. Nombres y especialidades exactos, sin bios inventadas.
 ---
 <section id="abogados" class="py-20 bg-surface">
@@ -7,18 +9,18 @@
       <h2 class="text-[32px] leading-10 font-semibold text-on-surface underline-motif underline-motif--center">Nuestro Equipo</h2>
     </div>
     <div class="grid md:grid-cols-2 gap-6 mt-10">
-      <div class="flex flex-col sm:flex-row gap-4 items-start p-6 border border-outline-variant rounded-sm bg-white">
+      <div class="flex flex-col sm:flex-row gap-4 items-start p-6 border border-platinum-silver rounded-sm bg-white">
         <div class="w-32 h-32 flex-shrink-0 bg-surface-container-low rounded-sm overflow-hidden">
-          <img src="/principal.jpeg" alt="Omar Enrique Ipial Ipial" class="w-full h-full object-cover grayscale" loading="lazy" />
+          <Image src={principal} alt="Omar Enrique Ipial Ipial" widths={[128, 256]} sizes="128px" format="webp" quality={75} loading="lazy" class="w-full h-full object-cover grayscale" />
         </div>
         <div>
           <h3 class="text-[20px] font-semibold text-on-surface">Omar Enrique Ipial Ipial</h3>
           <p class="text-xs font-semibold text-primary mt-1 mb-2 tracking-widest uppercase">Especialista en Derecho Laboral y Seguridad Social</p>
         </div>
       </div>
-      <div class="flex flex-col sm:flex-row gap-4 items-start p-6 border border-outline-variant rounded-sm bg-white">
+      <div class="flex flex-col sm:flex-row gap-4 items-start p-6 border border-platinum-silver rounded-sm bg-white">
         <div class="w-32 h-32 flex-shrink-0 bg-surface-container-low rounded-sm overflow-hidden">
-          <img src="/principal.jpeg" alt="Franco Miller Ipial Ipial" class="w-full h-full object-cover grayscale" loading="lazy" />
+          <Image src={principal} alt="Franco Miller Ipial Ipial" widths={[128, 256]} sizes="128px" format="webp" quality={75} loading="lazy" class="w-full h-full object-cover grayscale" />
         </div>
         <div>
           <h3 class="text-[20px] font-semibold text-on-surface">Franco Miller Ipial Ipial</h3>
