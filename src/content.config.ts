@@ -1,8 +1,9 @@
 // Taxonomía: Ipialabogados.md §2-§4 — fuente canónica. Enums estrictos; build falla si reingresa "Derecho Civil"/inventados (§6).
 import { defineCollection, z } from "astro:content";
+import { glob } from "astro/loaders";
 
 const servicios = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/servicios" }),
   schema: z
     .object({
       title: z.string(),
@@ -18,7 +19,7 @@ const servicios = defineCollection({
 });
 
 const abogados = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/abogados" }),
   schema: z.object({
     name: z.enum(["Omar Enrique Ipial Ipial", "Franco Miller Ipial Ipial"]),
     specialty: z.enum([
