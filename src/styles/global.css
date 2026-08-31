@@ -85,16 +85,29 @@ h1, h2, h3, h4, .font-serif {
   left: 0;
   width: 40px;
   height: 2px;
-  background-color: var(--color-primary);
+  background-color: var(--color-forest-deep);
 }
 .underline-motif--center::after {
   left: 50%;
   transform: translateX(-50%);
 }
 
-/* Design System Divider */
+/* Design System Divider — Lex Imperial 1px Platinum */
 .section-divider {
   border-top: 1px solid var(--color-platinum-silver);
+}
+
+/* Container — 1200 max, centered */
+.container-lex {
+  max-width: var(--spacing-container-max);
+  margin-inline: auto;
+}
+
+/* Cards — White bg + 1px Platinum border, no shadow (Lex Imperial) */
+.card-lex {
+  background: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-platinum-silver);
+  border-radius: var(--radius);
 }
 
 /* Services board — minimalist structured look */
@@ -150,10 +163,27 @@ h1, h2, h3, h4, .font-serif {
   color: #ffffff !important;
 }
 
-/* Focus-visible — a11y */
+/* Focus-visible — a11y (Forest Deep + Teal accent) */
 :focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
+}
+
+/* Button hover — Forest Deep → Teal #148F77 */
+.btn-primary:hover { background: var(--color-teal-accent); }
+
+/* Chip / tag — light Silver/Charcoal */
+.chip {
+  background: var(--color-surface-container-high);
+  color: var(--color-charcoal-text);
+  border: 1px solid var(--color-platinum-silver);
+}
+
+/* Lex list — Forest dashes */
+.list-lex li::before {
+  content: '—';
+  color: var(--color-forest-deep);
+  margin-right: 0.5rem;
 }
 
 /* Reduced-motion guard — MUST be last */
