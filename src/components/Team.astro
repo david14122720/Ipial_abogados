@@ -1,77 +1,46 @@
 ---
 import { Image } from "astro:assets";
-import { getCollection } from "astro:content";
 import principal from "../assets/principal.webp";
 import { CONTACT } from "../consts.ts";
-
-// Fuente: Ipialabogados.md §2 — verbatim §6.
-const allServices = await getCollection('servicios');
-const omarServices = allServices.filter(s => s.data.abogado === 'omar').sort((a, b) => a.data.order - b.data.order);
-const francoServices = allServices.filter(s => s.data.abogado === 'franco').sort((a, b) => a.data.order - b.data.order);
 ---
 
 <section id="abogados" class="py-section-gap px-gutter bg-surface">
   <div class="max-w-container-max mx-auto">
     <div class="text-center mb-16">
+      <p class="text-label-sm font-semibold tracking-widest uppercase text-primary mb-2">Equipo</p>
       <h2 class="text-headline-lg text-primary">Nuestro Equipo</h2>
-      <div class="w-20 h-1 bg-primary mx-auto mt-4 rounded-full opacity-20"></div>
+      <div class="w-20 h-px bg-silver-metallic mx-auto mt-4"></div>
     </div>
 
-    <div class="flex flex-col gap-24">
-      <!-- Omar Enrique Ipial Ipial -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        <div class="lg:col-span-4 flex flex-col items-center text-center">
-          <div class="w-64 h-64 rounded-full overflow-hidden shadow-md bg-surface-container-low mb-6 border-4 border-white">
-            <Image src={principal} alt="Omar Enrique Ipial Ipial" widths={[256, 512]} sizes="256px" format="webp" quality={75} loading="lazy" class="w-full h-full object-cover" />
-          </div>
-          <h3 class="text-headline-md text-primary">Omar Enrique Ipial Ipial</h3>
-          <p class="text-body-md text-on-surface-variant mb-6">Especialista en Derecho Laboral y Seguridad Social</p>
-          <a href={CONTACT.waPrimaryHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-whatsapp-green text-white px-6 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity shadow-sm">
-            WhatsApp Directo
-          </a>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+      <div class="flex flex-col items-center text-center">
+        <div class="w-64 h-64 rounded-full overflow-hidden shadow-md bg-surface-container-low mb-6 border-4 border-white">
+          <Image src={principal} alt="Omar Enrique Ipial Ipial" widths={[256, 512]} sizes="256px" format="webp" quality={75} loading="lazy" class="w-full h-full object-cover" />
         </div>
-
-        <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-          {omarServices.map(service => (
-            <div class={`card-lex p-6 rounded-lg border border-outline-variant shadow-sm hover:shadow-md transition-all duration-200 ${service.data.grupo === 'pensionados' ? 'md:col-span-2' : ''}`}>
-              <h4 class="text-headline-md text-primary mb-3 flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-primary"></span>
-                {service.data.title}
-              </h4>
-              <p class="text-body-md text-on-surface-variant leading-relaxed">
-                {service.data.description}
-              </p>
-            </div>
-          ))}
+        <h3 class="text-headline-md text-primary">Omar Enrique Ipial Ipial</h3>
+        <p class="text-body-md text-on-surface-variant mb-4">Especialista en Derecho Laboral y Seguridad Social</p>
+        <div class="flex flex-wrap gap-2 justify-center mb-6">
+          <a href="#servicios" class="chip">Trabajadores</a>
+          <a href="#servicios" class="chip">Empleadores</a>
+          <a href="#servicios" class="chip">Pensionados</a>
         </div>
+        <a href={CONTACT.waPrimaryHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-whatsapp-green text-white px-6 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity shadow-sm">
+          WhatsApp Directo
+        </a>
       </div>
 
-      <!-- Franco Miller Ipial Ipial -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        <div class="lg:order-2 lg:col-span-4 flex flex-col items-center text-center">
-          <div class="w-64 h-64 rounded-full overflow-hidden shadow-md bg-surface-container-low mb-6 border-4 border-white">
-            <Image src={principal} alt="Franco Miller Ipial Ipial" widths={[256, 512]} sizes="256px" format="webp" quality={75} loading="lazy" class="w-full h-full object-cover" />
-          </div>
-          <h3 class="text-headline-md text-primary">Franco Miller Ipial Ipial</h3>
-          <p class="text-body-md text-on-surface-variant mb-6">Especialista en Derecho Penal y Procesal Penal</p>
-          <a href={CONTACT.waPrimaryHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-whatsapp-green text-white px-6 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity shadow-sm">
-            WhatsApp Directo
-          </a>
+      <div class="flex flex-col items-center text-center">
+        <div class="w-64 h-64 rounded-full overflow-hidden shadow-md bg-surface-container-low mb-6 border-4 border-white">
+          <Image src={principal} alt="Franco Miller Ipial Ipial" widths={[256, 512]} sizes="256px" format="webp" quality={75} loading="lazy" class="w-full h-full object-cover" />
         </div>
-
-        <div class="lg:order-1 lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-          {francoServices.map(service => (
-            <div class="card-lex p-8 rounded-lg border border-outline-variant shadow-sm hover:shadow-md transition-all duration-200 md:col-span-2">
-              <h4 class="text-headline-md text-primary mb-3 flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-primary"></span>
-                {service.data.title}
-              </h4>
-              <p class="text-body-md text-on-surface-variant leading-relaxed">
-                {service.data.description}
-              </p>
-            </div>
-          ))}
+        <h3 class="text-headline-md text-primary">Franco Miller Ipial Ipial</h3>
+        <p class="text-body-md text-on-surface-variant mb-4">Especialista en Derecho Penal y Procesal Penal</p>
+        <div class="flex flex-wrap gap-2 justify-center mb-6">
+          <a href="#servicios" class="chip">Penal</a>
         </div>
+        <a href={CONTACT.waPrimaryHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-whatsapp-green text-white px-6 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity shadow-sm">
+          WhatsApp Directo
+        </a>
       </div>
     </div>
   </div>

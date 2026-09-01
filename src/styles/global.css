@@ -42,21 +42,21 @@
   --color-teal-accent: var(--color-emerald-deep);
   --color-charcoal-text: var(--color-slate-charcoal);
 
-  /* Typography */
-  --text-headline-xl: 48px;
-  --text-headline-xl--line-height: 56px;
+  /* Typography — fluid clamp() editorial scale */
+  --text-headline-xl: clamp(2rem, 5vw, 3rem);
+  --text-headline-xl--line-height: 1.15;
   --text-headline-xl--letter-spacing: -0.02em;
   --text-headline-xl--font-weight: 700;
-  --text-display-lg: 48px;
-  --text-display-lg--line-height: 56px;
+  --text-display-lg: clamp(2rem, 5vw, 3rem);
+  --text-display-lg--line-height: 1.15;
   --text-display-lg--letter-spacing: -0.02em;
-  --text-headline-lg: 32px;
-  --text-headline-lg--line-height: 40px;
+  --text-headline-lg: clamp(1.5rem, 3.5vw, 2rem);
+  --text-headline-lg--line-height: 1.25;
   --text-headline-md: 20px;
   --text-headline-md--line-height: 28px;
   --text-headline-md--font-weight: 600;
-  --text-body-lg: 18px;
-  --text-body-lg--line-height: 28px;
+  --text-body-lg: clamp(1rem, 2vw, 1.125rem);
+  --text-body-lg--line-height: 1.55;
   --text-body-md: 16px;
   --text-body-md--line-height: 24px;
   --text-label-md: 14px;
@@ -220,6 +220,13 @@ h1, h2, h3, h4, .font-serif {
   color: var(--color-emerald-deep);
   margin-right: 0.5rem;
 }
+
+/* Section-level content-visibility for offscreen perf */
+section[id] {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+#inicio { content-visibility: visible; }
 
 /* Reduced-motion guard — MUST be last */
 @media (prefers-reduced-motion: reduce) {
