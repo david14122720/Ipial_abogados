@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 
 const LINKS = [
-  { href: "#inicio", label: "Inicio" },
-  { href: "#nosotros", label: "Nosotros" },
   { href: "#servicios", label: "Servicios" },
+  { href: "#quienes-somos", label: "Quiénes somos" },
   { href: "#abogados", label: "Abogados" },
+  { href: "#porque-elegirnos", label: "Por qué elegirnos" },
   { href: "#contacto", label: "Contacto" },
 ];
 
@@ -64,7 +64,7 @@ export default function MobileDrawer() {
         aria-controls="mobile-drawer"
         aria-label={open ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
         onClick={toggle}
-        className="md:hidden p-2 text-on-surface header-menu-icon focus-visible:outline-2 focus-visible:outline-emerald-deep focus-visible:outline-offset-2 rounded-sm"
+        className="md:hidden p-2 -mr-1 text-on-surface header-menu-icon focus-visible:outline-2 focus-visible:outline-emerald-deep focus-visible:outline-offset-2 rounded-sm min-w-[44px] min-h-[44px] flex items-center justify-center"
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true">
           <path d={open ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
@@ -75,7 +75,7 @@ export default function MobileDrawer() {
         <div
           aria-hidden="true"
           onClick={close}
-          className="md:hidden fixed inset-0 top-20 bg-black/20 backdrop-blur-sm z-40"
+          className="md:hidden fixed inset-0 top-16 bg-black/20 backdrop-blur-sm z-40"
         />
       )}
 
@@ -85,13 +85,13 @@ export default function MobileDrawer() {
         hidden={!open}
         className="md:hidden absolute top-full left-0 w-full bg-surface border-t border-outline-variant shadow-lg z-50"
       >
-        <nav className="flex flex-col px-6 py-6 gap-4 text-[15px]" aria-label="Navegación móvil">
+        <nav className="flex flex-col px-6 py-6 gap-2 text-[17px]" aria-label="Navegación móvil">
           {LINKS.map((l) => (
             <a
               key={l.href}
               href={l.href}
               onClick={close}
-              className="text-on-surface-variant hover:text-primary py-2"
+              className="text-on-surface-variant hover:text-primary py-3 px-2 rounded-sm active:bg-surface-container"
             >
               {l.label}
             </a>

@@ -1,46 +1,29 @@
 ---
 import { Image } from "astro:assets";
-import principal from "../assets/principal.webp";
-import { CONTACT } from "../consts.ts";
+import omarImg from "../assets/principal.webp";
 ---
-
-<section id="abogados" class="py-section-gap px-gutter bg-surface">
+<section class="py-section-padding px-gutter bg-white border-t border-platinum-silver" id="abogados">
   <div class="max-w-container-max mx-auto">
-    <div class="text-center mb-16">
-      <p class="text-label-sm font-semibold tracking-widest uppercase text-primary mb-2">Equipo</p>
-      <h2 class="text-headline-lg text-primary">Nuestro Equipo</h2>
-      <div class="w-20 h-px bg-silver-metallic mx-auto mt-4"></div>
+    <div data-reveal class="text-center mb-16">
+      <h2 class="font-headline-lg text-headline-lg text-forest-deep mb-4">Nuestros Abogados</h2>
+      <div class="w-16 h-px bg-platinum-silver mx-auto"></div>
     </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-      <div class="flex flex-col items-center text-center">
-        <div class="w-64 h-64 rounded-full overflow-hidden shadow-md bg-surface-container-low mb-6 border-4 border-white">
-          <Image src={principal} alt="Omar Enrique Ipial Ipial" widths={[256, 512]} sizes="256px" format="webp" quality={75} loading="lazy" class="w-full h-full object-cover" />
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
+      <div data-reveal class="flex flex-col items-center text-center px-2">
+        <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-surface-container-low mb-5 md:mb-6 shrink-0">
+          <Image src={omarImg} alt="Omar Enrique Ipial Ipial" widths={[160, 192, 384]} sizes="(max-width: 768px) 160px, 192px" format="webp" quality={75} loading="lazy" class="w-full h-full object-cover" />
         </div>
-        <h3 class="text-headline-md text-primary">Omar Enrique Ipial Ipial</h3>
-        <p class="text-body-md text-on-surface-variant mb-4">Especialista en Derecho Laboral y Seguridad Social</p>
-        <div class="flex flex-wrap gap-2 justify-center mb-6">
-          <a href="#servicios" class="chip">Trabajadores</a>
-          <a href="#servicios" class="chip">Empleadores</a>
-          <a href="#servicios" class="chip">Pensionados</a>
-        </div>
-        <a href={CONTACT.waPrimaryHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-whatsapp-green text-white px-6 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity shadow-sm">
-          WhatsApp Directo
-        </a>
+        <h3 class="font-headline-md text-headline-md text-forest-deep mb-2 [text-wrap:balance]">Omar Enrique Ipial Ipial</h3>
+        <p class="font-label-md text-label-md text-teal-accent uppercase tracking-wider mb-3 md:mb-4 [text-wrap:balance]">Especialista en Derecho Laboral y Seguridad Social</p>
+        <p class="font-body-md text-body-md text-secondary max-w-sm [text-wrap:pretty]">Amplia experiencia en la resolución de conflictos laborales, asesoramiento a empresas y defensa de los derechos de los trabajadores y pensionados.</p>
       </div>
-
-      <div class="flex flex-col items-center text-center">
-        <div class="w-64 h-64 rounded-full overflow-hidden shadow-md bg-surface-container-low mb-6 border-4 border-white">
-          <Image src={principal} alt="Franco Miller Ipial Ipial" widths={[256, 512]} sizes="256px" format="webp" quality={75} loading="lazy" class="w-full h-full object-cover" />
+      <div data-reveal data-reveal-delay="150" class="flex flex-col items-center text-center px-2">
+        <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-surface-container-low mb-5 md:mb-6 shrink-0 bg-forest-deep flex items-center justify-center" aria-hidden="true">
+          <span class="font-serif font-bold text-white text-4xl md:text-5xl tracking-[0.08em] select-none">FM</span>
         </div>
-        <h3 class="text-headline-md text-primary">Franco Miller Ipial Ipial</h3>
-        <p class="text-body-md text-on-surface-variant mb-4">Especialista en Derecho Penal y Procesal Penal</p>
-        <div class="flex flex-wrap gap-2 justify-center mb-6">
-          <a href="#servicios" class="chip">Penal</a>
-        </div>
-        <a href={CONTACT.waPrimaryHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-whatsapp-green text-white px-6 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity shadow-sm">
-          WhatsApp Directo
-        </a>
+        <h3 class="font-headline-md text-headline-md text-forest-deep mb-2 [text-wrap:balance]">Franco Miller Ipial Ipial</h3>
+        <p class="font-label-md text-label-md text-teal-accent uppercase tracking-wider mb-3 md:mb-4 [text-wrap:balance]">Especialista en Derecho Penal y Procesal Penal</p>
+        <p class="font-body-md text-body-md text-secondary max-w-sm [text-wrap:pretty]">Dedicado a la defensa técnica rigurosa y la representación integral en el sistema penal acusatorio, garantizando el debido proceso.</p>
       </div>
     </div>
   </div>

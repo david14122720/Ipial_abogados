@@ -1,28 +1,114 @@
 ---
-import { getCollection } from "astro:content";
-import ServiceExplorer from "./islands/ServiceExplorer.tsx";
-const servicios = (await getCollection("servicios")).sort((a, b) => a.data.order - b.data.order);
-
-function parseItems(body: string): string[] {
-  return body.split("\n").map((l) => l.trim()).filter((l) => l.startsWith("- ")).map((l) => l.slice(2).trim()).filter(Boolean);
-}
-
-const byGrupo = new Map(servicios.map((e) => [e.data.grupo, { entry: e, items: parseItems(e.body ?? "") }]));
-const grupos = [
-  byGrupo.get("trabajadores"),
-  byGrupo.get("empleadores"),
-  byGrupo.get("pensionados"),
-  byGrupo.get("penal"),
-].filter(Boolean).map((g) => ({ grupo: g!.entry.data.grupo, title: g!.entry.data.title, items: g!.items }));
+import { Image } from "astro:assets";
+import trabajadoresImg from "../assets/trabajadores.jpeg";
+import empleadoresImg from "../assets/empleadores.jpeg";
+import seguridadImg from "../assets/seguridad_social.jpeg";
 ---
-
-<section id="servicios" class="py-section-gap px-gutter bg-surface">
+<section class="py-section-padding px-gutter bg-surface" id="servicios">
   <div class="max-w-container-max mx-auto">
-    <div class="text-center mb-12">
-      <p class="text-label-sm font-semibold tracking-widest uppercase text-primary mb-2">Servicios Jurídicos</p>
-      <h2 class="text-headline-lg text-primary">Servicios Jurídicos Especializados</h2>
-      <div class="w-20 h-px bg-silver-metallic mx-auto mt-4"></div>
+    <div data-reveal class="text-center mb-14 md:mb-16">
+      <p class="font-label-md text-label-sm tracking-[0.14em] uppercase text-teal-accent mb-3">Áreas de práctica</p>
+      <h2 class="font-headline-lg text-headline-lg text-forest-deep mb-4 [text-wrap:balance]">Servicios Jurídicos Especializados</h2>
+      <div class="w-16 h-px bg-platinum-silver mx-auto"></div>
     </div>
-    <ServiceExplorer grupos={grupos} client:visible />
+
+    <!-- Derecho Laboral -->
+    <div class="mb-12 md:mb-20">
+      <div data-reveal class="flex flex-col md:flex-row gap-4 md:gap-8 items-start mb-8 md:mb-12 border-l-2 border-forest-deep pl-5 md:pl-6">
+        <div>
+          <h3 class="font-headline-md text-headline-md text-forest-deep mb-2 [text-wrap:balance]">Derecho Laboral y Seguridad Social</h3>
+          <p class="font-label-md text-label-md text-secondary uppercase tracking-wider">Dirigido por Omar Enrique Ipial Ipial</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <!-- Para Trabajadores -->
+        <article data-reveal class="group bg-white border border-platinum-silver rounded overflow-hidden flex flex-col hover:border-teal-accent transition-colors hover:shadow-[0_12px_32px_rgba(0,38,27,0.10)] hover:-translate-y-1 duration-300">
+          <div class="overflow-hidden h-48 md:h-52 shrink-0">
+            <Image src={trabajadoresImg} alt="Asesoría jurídica para trabajadores" widths={[400, 600, 800]} sizes="(max-width:768px) 100vw, 33vw" format="webp" quality={75} loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500 ease-[cubic-bezier(.16,1,.3,1)]" />
+          </div>
+          <div class="p-6 md:p-7 flex flex-col flex-1">
+            <h4 class="font-headline-md text-body-lg font-semibold text-forest-deep mb-5 flex items-center gap-3">
+              <span class="material-symbols-outlined text-teal-accent" aria-hidden="true">person</span>
+              Para Trabajadores
+            </h4>
+            <ul class="space-y-3 font-body-md text-body-md text-charcoal-text">
+              <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-teal-accent mt-[10px] shrink-0" aria-hidden="true"></span><span>Liquidación de prestaciones sociales</span></li>
+              <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-teal-accent mt-[10px] shrink-0" aria-hidden="true"></span><span>Indemnización por despido injusto</span></li>
+              <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-teal-accent mt-[10px] shrink-0" aria-hidden="true"></span><span>Acoso laboral</span></li>
+              <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-teal-accent mt-[10px] shrink-0" aria-hidden="true"></span><span>Contratos realidad</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Para Empleadores -->
+        <article data-reveal data-reveal-delay="100" class="group bg-white border border-platinum-silver rounded overflow-hidden flex flex-col hover:border-teal-accent transition-colors hover:shadow-[0_12px_32px_rgba(0,38,27,0.10)] hover:-translate-y-1 duration-300">
+          <div class="overflow-hidden h-48 md:h-52 shrink-0">
+            <Image src={empleadoresImg} alt="Asesoría jurídica para empleadores" widths={[400, 600, 800]} sizes="(max-width:768px) 100vw, 33vw" format="webp" quality={75} loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500 ease-[cubic-bezier(.16,1,.3,1)]" />
+          </div>
+          <div class="p-6 md:p-7 flex flex-col flex-1">
+            <h4 class="font-headline-md text-body-lg font-semibold text-forest-deep mb-5 flex items-center gap-3">
+              <span class="material-symbols-outlined text-teal-accent" aria-hidden="true">business</span>
+              Para Empleadores
+            </h4>
+            <ul class="space-y-3 font-body-md text-body-md text-charcoal-text">
+              <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-teal-accent mt-[10px] shrink-0" aria-hidden="true"></span><span>Auditorías laborales</span></li>
+              <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-teal-accent mt-[10px] shrink-0" aria-hidden="true"></span><span>Reglamentos de trabajo</span></li>
+              <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-teal-accent mt-[10px] shrink-0" aria-hidden="true"></span><span>Procesos disciplinarios</span></li>
+              <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-teal-accent mt-[10px] shrink-0" aria-hidden="true"></span><span>Contratación</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Seguridad Social -->
+        <article data-reveal data-reveal-delay="200" class="group bg-white border border-platinum-silver rounded overflow-hidden flex flex-col hover:border-teal-accent transition-colors hover:shadow-[0_12px_32px_rgba(0,38,27,0.10)] hover:-translate-y-1 duration-300">
+          <div class="overflow-hidden h-48 md:h-52 shrink-0">
+            <Image src={seguridadImg} alt="Seguridad social y pensiones" widths={[400, 600, 800]} sizes="(max-width:768px) 100vw, 33vw" format="webp" quality={75} loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500 ease-[cubic-bezier(.16,1,.3,1)]" />
+          </div>
+          <div class="p-6 md:p-7 flex flex-col flex-1">
+            <h4 class="font-headline-md text-body-lg font-semibold text-forest-deep mb-5 flex items-center gap-3">
+              <span class="material-symbols-outlined text-teal-accent" aria-hidden="true">elderly</span>
+              Seguridad Social
+            </h4>
+            <ul class="space-y-3 font-body-md text-body-md text-charcoal-text">
+              <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-teal-accent mt-[10px] shrink-0" aria-hidden="true"></span><span>Pensiones de vejez, invalidez y sobrevivientes</span></li>
+              <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-teal-accent mt-[10px] shrink-0" aria-hidden="true"></span><span>Reliquidación pensional</span></li>
+              <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-teal-accent mt-[10px] shrink-0" aria-hidden="true"></span><span>Traslados de régimen</span></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Derecho Penal — sin imagen, diseño elegante -->
+    <div>
+      <div data-reveal class="flex flex-col md:flex-row gap-4 md:gap-8 items-start mb-8 md:mb-12 border-l-2 border-forest-deep pl-5 md:pl-6">
+        <div>
+          <h3 class="font-headline-md text-headline-md text-forest-deep mb-2 [text-wrap:balance]">Derecho Penal y Procesal Penal</h3>
+          <p class="font-label-md text-label-md text-secondary uppercase tracking-wider">Dirigido por Franco Miller Ipial Ipial</p>
+        </div>
+      </div>
+      <article data-reveal data-reveal-delay="100" class="bg-white border border-platinum-silver rounded overflow-hidden hover:border-teal-accent transition-colors hover:shadow-[0_12px_32px_rgba(0,38,27,0.10)] hover:-translate-y-1 duration-300 max-w-3xl">
+        <!-- Decorative header — elegant without photo -->
+        <div class="h-1.5 bg-teal-accent w-full"></div>
+        <div class="bg-forest-deep/[0.04] border-b border-platinum-silver/60 px-6 md:px-8 py-6 flex items-center gap-5">
+          <div class="w-14 h-14 rounded-full bg-white border border-platinum-silver flex items-center justify-center shrink-0 shadow-sm">
+            <span class="material-symbols-outlined text-3xl text-forest-deep" aria-hidden="true">gavel</span>
+          </div>
+          <div>
+            <p class="font-headline-md text-body-lg font-semibold text-forest-deep leading-tight">Defensa Penal Técnica</p>
+            <p class="font-body-md text-body-md text-secondary text-sm mt-1">Sistema Penal Acusatorio · Garantía del debido proceso</p>
+          </div>
+        </div>
+        <div class="p-6 md:p-8">
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 font-body-md text-body-md text-charcoal-text">
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-teal-accent mt-[10px] shrink-0" aria-hidden="true"></span><span>Defensa técnica en etapa de indagación e investigación</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-teal-accent mt-[10px] shrink-0" aria-hidden="true"></span><span>Defensa técnica en etapa de juicio</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-teal-accent mt-[10px] shrink-0" aria-hidden="true"></span><span>Representación de víctimas</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-teal-accent mt-[10px] shrink-0" aria-hidden="true"></span><span>Recursos de apelación y casación</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-teal-accent mt-[10px] shrink-0" aria-hidden="true"></span><span>Asesoría en derecho penitenciario</span></li>
+          </ul>
+        </div>
+      </article>
+    </div>
   </div>
 </section>

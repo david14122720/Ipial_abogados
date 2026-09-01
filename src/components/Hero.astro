@@ -1,36 +1,24 @@
 ---
 import { Image } from "astro:assets";
 import principal from "../assets/principal.webp";
-import { CONTACT } from "../consts.ts";
 ---
-<section id="inicio" class="relative min-h-[78vh] flex items-center justify-center overflow-hidden">
-  <div class="absolute inset-0" aria-hidden="true">
+<section id="inicio" class="relative min-h-[70vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden border-b border-platinum-silver">
+  <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 bg-forest-deep/80 mix-blend-multiply z-10"></div>
     <Image
       src={principal}
-      alt=""
+      alt="Oficina jurídica profesional"
       widths={[640, 960, 1280]}
       sizes="100vw"
       format="webp"
       quality={75}
       loading="eager"
       fetchpriority="high"
-      class="w-full h-full object-cover object-center"
+      class="w-full h-full object-cover grayscale opacity-60"
     />
   </div>
-  <div class="relative z-10 max-w-container-max mx-auto px-gutter py-12 md:py-20 flex flex-col items-center text-center w-full">
-    <p class="text-label-sm font-semibold tracking-widest uppercase text-white/80 mb-4">Ipiales · 2 especialistas · Laboral y Seguridad Social + Penal</p>
-    <h1 class="text-headline-xl text-white max-w-4xl leading-tight">Autoridad, Precisión y Legado</h1>
-    <p class="text-body-lg text-white max-w-2xl mt-6 mb-8 opacity-95">
-      Asesoría legal especializada para brindarte la tranquilidad y seguridad que mereces, fundamentada en la integridad y el rigor profesional.
-    </p>
-    <div class="flex flex-wrap gap-4 justify-center">
-      <a href={CONTACT.waPrimaryHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-whatsapp-green text-white px-8 py-3 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity shadow-md">
-        Consultar por WhatsApp
-      </a>
-      <a href="#servicios" class="inline-flex items-center gap-2 bg-white text-primary px-8 py-3 rounded-full text-sm font-semibold hover:bg-surface-container-low transition-colors shadow-md">
-        Ver servicios
-      </a>
-    </div>
+  <div class="relative z-20 text-center px-gutter max-w-4xl mx-auto flex flex-col items-center gap-5 md:gap-6 py-14 md:py-20">
+    <h1 data-reveal class="font-display-lg text-display-lg text-on-primary mb-1 md:mb-2 drop-shadow-md leading-[1.05] md:leading-[1.1] [text-wrap:balance]">Ipial Abogados:<br />Excelencia y Compromiso en Asesoría Jurídica</h1>
+    <p data-reveal data-reveal-delay="100" class="font-body-lg text-body-lg text-surface-container-low max-w-2xl [text-wrap:pretty] leading-relaxed">Servicios jurídicos especializados en Derecho Laboral, Seguridad Social y Derecho Penal.</p>
   </div>
 </section>
-<div id="header-sentinel" aria-hidden="true" class="h-px w-full"></div>

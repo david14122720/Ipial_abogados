@@ -1,16 +1,22 @@
 @import "tailwindcss";
 
-/* Self-hosted fonts via @fontsource — Emerald: Libre Caslon Text 700 + Hanken Grotesk + Material Symbols */
+/* Self-hosted fonts via @fontsource — Lex Imperial: EB Garamond + Hanken Grotesk + Material Symbols */
 @import "@fontsource/hanken-grotesk/400.css";
 @import "@fontsource/hanken-grotesk/500.css";
 @import "@fontsource/hanken-grotesk/600.css";
-@import "@fontsource/libre-caslon-text/700.css";
+@import "@fontsource/eb-garamond/400.css";
+@import "@fontsource/eb-garamond/500.css";
+@import "@fontsource/eb-garamond/700.css";
 @import "@fontsource/material-symbols-outlined/400.css";
 
 @theme {
-  --color-primary: #004a38;
+  --color-primary: #00261b;
   --color-primary-container: #0b3d2e;
-  --color-emerald-deep: #14634d;
+  --color-forest-deep: #05261D;
+  --color-platinum-silver: #B8B9BA;
+  --color-platinum: #B8B9BA;
+  --color-teal-accent: #148F77;
+  --color-charcoal-text: #2C3E50;
   --color-surface: #f8f9f9;
   --color-surface-bright: #f8f9f9;
   --color-surface-dim: #d9dada;
@@ -20,79 +26,136 @@
   --color-surface-container-high: #e7e8e8;
   --color-surface-container-highest: #e1e3e3;
   --color-surface-variant: #e1e3e3;
-  --color-surface-tint: #1e6a54;
+  --color-surface-tint: #00261b;
   --color-on-surface: #191c1c;
   --color-on-surface-variant: #414944;
   --color-inverse-surface: #2e3131;
   --color-inverse-on-surface: #f0f1f1;
   --color-secondary: #5e5e5e;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #e4e2e2;
+  --color-on-secondary-container: #646464;
+  --color-tertiary: #1e2123;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #333638;
+  --color-on-tertiary-container: #9c9fa1;
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+  --color-primary-fixed: #bcedd7;
+  --color-primary-fixed-dim: #a0d1bc;
+  --color-on-primary-fixed: #002116;
+  --color-on-primary-fixed-variant: #214f3f;
   --color-outline: #717974;
   --color-outline-variant: #c0c8c3;
-  --color-silver-metallic: #A8ADB0;
-  --color-slate-charcoal: #2C3333;
-  --color-whatsapp-green: #25D366;
-  --color-facebook-blue: #1877F2;
   --color-background: #f8f9f9;
   --color-on-background: #191c1c;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #79a894;
+  --color-inverse-primary: #a0d1bc;
+  --color-whatsapp-green: #25D366;
+  --color-facebook-blue: #1877F2;
 
-  /* Legacy shims — Imperial aliases → Emerald (grace period PR-1) */
-  --color-forest-deep: var(--color-primary);
-  --color-platinum-silver: var(--color-silver-metallic);
-  --color-platinum: var(--color-silver-metallic);
-  --color-teal-accent: var(--color-emerald-deep);
-  --color-charcoal-text: var(--color-slate-charcoal);
+  /* Legacy shims — Emerald aliases → Imperial */
+  --color-silver-metallic: var(--color-platinum-silver);
+  --color-slate-charcoal: var(--color-charcoal-text);
+  --color-emerald-deep: var(--color-teal-accent);
 
-  /* Typography — fluid clamp() editorial scale */
-  --text-headline-xl: clamp(2rem, 5vw, 3rem);
-  --text-headline-xl--line-height: 1.15;
-  --text-headline-xl--letter-spacing: -0.02em;
+  /* Typography — fluid clamp() editorial scale — enlarged +15-20% for readability */
+  --text-headline-xl: clamp(2.25rem, 6vw, 3.5rem);
+  --text-headline-xl--line-height: 1.1;
+  --text-headline-xl--letter-spacing: -0.025em;
   --text-headline-xl--font-weight: 700;
-  --text-display-lg: clamp(2rem, 5vw, 3rem);
-  --text-display-lg--line-height: 1.15;
-  --text-display-lg--letter-spacing: -0.02em;
-  --text-headline-lg: clamp(1.5rem, 3.5vw, 2rem);
-  --text-headline-lg--line-height: 1.25;
-  --text-headline-md: 20px;
-  --text-headline-md--line-height: 28px;
+  --text-display-lg: clamp(2.25rem, 6vw, 3.5rem);
+  --text-display-lg--line-height: 1.1;
+  --text-display-lg--letter-spacing: -0.025em;
+  --text-display-lg--font-weight: 700;
+  --text-headline-lg: clamp(1.75rem, 4vw, 2.5rem);
+  --text-headline-lg--line-height: 1.2;
+  --text-headline-lg--letter-spacing: -0.015em;
+  --text-headline-lg--font-weight: 700;
+  --text-headline-md: clamp(1.25rem, 2.8vw, 1.5rem);
+  --text-headline-md--line-height: 1.35;
   --text-headline-md--font-weight: 600;
-  --text-body-lg: clamp(1rem, 2vw, 1.125rem);
-  --text-body-lg--line-height: 1.55;
-  --text-body-md: 16px;
-  --text-body-md--line-height: 24px;
-  --text-label-md: 14px;
-  --text-label-md--line-height: 20px;
+  --text-body-lg: clamp(1.0625rem, 1.8vw, 1.25rem);
+  --text-body-lg--line-height: 1.6;
+  --text-body-md: clamp(1rem, 1.4vw, 1.125rem);
+  --text-body-md--line-height: 1.65;
+  --text-label-md: clamp(0.875rem, 1.2vw, 0.9375rem);
+  --text-label-md--line-height: 1.5;
   --text-label-md--letter-spacing: 0.05em;
   --text-label-md--font-weight: 600;
-  --text-label-sm: 12px;
-  --text-label-sm--line-height: 16px;
+  --text-label-sm: clamp(0.75rem, 1vw, 0.8125rem);
+  --text-label-sm--line-height: 1.5;
+  --text-label-sm--letter-spacing: 0.06em;
+  --text-label-sm--font-weight: 600;
 
-  /* Radii — Emerald: 0.125 / 0.25 / 0.5 / full */
+  /* Radii — Lex Imperial Stitch: DEFAULT 0.125rem, lg 0.25rem, xl 0.5rem, full 0.75rem (+ pill) */
   --radius-sm: 0.125rem;
   --radius: 0.125rem;
   --radius-lg: 0.25rem;
   --radius-xl: 0.5rem;
-  --radius-full: 9999px;
+  --radius-full: 0.75rem;
+  --radius-pill: 9999px;
 
-  /* Spacing */
-  --spacing-gutter: 24px;
-  --spacing-margin-edge: 40px;
-  --spacing-section-padding: 80px;
-  --spacing-section-gap: 80px;
+  /* Spacing — fluid gutters for mobile polish */
+  --spacing-gutter: clamp(16px, 4vw, 24px);
+  --spacing-margin-edge: clamp(16px, 4vw, 40px);
+  --spacing-section-padding: clamp(48px, 8vw, 80px);
+  --spacing-section-gap: clamp(48px, 8vw, 80px);
   --spacing-container-max: 1200px;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { font-size: 17px; }
+@media (min-width: 768px) { html { font-size: 18px; } }
+@media (min-width: 1280px) { html { font-size: 18px; } }
+
+/* Prevent horizontal overflow on mobile — long words / flex children */
+html, body { overflow-x: clip; max-width: 100vw; }
+img, iframe { max-width: 100%; }
 
 body {
   font-family: 'Hanken Grotesk', sans-serif;
   background: var(--color-surface);
   color: var(--color-on-surface);
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, .font-serif {
-  font-family: 'Libre Caslon Text', serif;
+  font-family: 'EB Garamond', serif;
 }
 
+/* Stitch font-family utilities — EB Garamond for display/headline, Hanken for body/label */
+.font-display-lg, .font-headline-lg, .font-headline-md, .font-headline-lg-mobile {
+  font-family: 'EB Garamond', serif;
+}
+.font-body-md, .font-body-lg, .font-label-md, .font-label-sm {
+  font-family: 'Hanken Grotesk', sans-serif;
+}
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Underline motif — Imperial 40px → 80px on parent hover */
 .underline-motif {
   position: relative;
   display: inline-block;
@@ -105,16 +168,43 @@ h1, h2, h3, h4, .font-serif {
   left: 0;
   width: 40px;
   height: 2px;
-  background-color: var(--color-emerald-deep);
+  background-color: var(--color-teal-accent);
+  transition: width 300ms cubic-bezier(.16,1,.3,1);
 }
 .underline-motif--center::after {
   left: 50%;
   transform: translateX(-50%);
 }
+/* Parent hover expands motif: add .group to wrapper, .underline-motif inside */
+.group:hover .underline-motif::after,
+.group:hover.underline-motif::after {
+  width: 80px;
+}
+/* For sections where header wraps motif, use :has or direct hover — fallback via .reveal parent */
+.reveal:hover .underline-motif::after { width: 80px; }
 
-/* Design System Divider — Lex Emerald 1px Silver */
+/* Nav link underline slide — apply .nav-link */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: var(--color-teal-accent);
+  transition: width 250ms cubic-bezier(.16,1,.3,1);
+}
+.nav-link:hover::after,
+.nav-link[aria-current="page"]::after {
+  width: 100%;
+}
+
+/* Design System Divider — Lex Imperial 1px Platinum Silver */
 .section-divider {
-  border-top: 1px solid var(--color-silver-metallic);
+  border-top: 1px solid var(--color-platinum-silver);
 }
 
 /* Container — 1200 max, centered */
@@ -123,21 +213,107 @@ h1, h2, h3, h4, .font-serif {
   margin-inline: auto;
 }
 
-/* Cards — Emerald: rounded-lg border silver shadow-sm + hover (motion: only transform/opacity 200ms, translate ≤2px) */
+/* Cards — Imperial: rounded 0.25rem, 1px platinum, lift -4px + teal border + 0 12px 32px */
 .card-lex {
   background: var(--color-surface-container-lowest);
-  border: 1px solid var(--color-silver-metallic);
-  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-platinum-silver);
+  border-radius: var(--radius);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  transition: box-shadow 200ms ease, transform 200ms ease, opacity 200ms ease;
+  transition:
+    box-shadow 250ms cubic-bezier(.16,1,.3,1),
+    transform 250ms cubic-bezier(.16,1,.3,1),
+    border-color 250ms cubic-bezier(.16,1,.3,1);
 }
 .card-lex:hover {
-  box-shadow: 0 10px 30px rgba(20, 99, 77, 0.08);
-  border-color: var(--color-silver-metallic);
-  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 38, 27, 0.10);
+  border-color: var(--color-teal-accent);
+  transform: translateY(-4px);
 }
 
-/* Services board — minimalist structured look */
+/* WhyUs stagger — parent .whyus-grid handles delay via inner cards */
+.whyus-card {
+  transition:
+    box-shadow 250ms cubic-bezier(.16,1,.3,1),
+    transform 250ms cubic-bezier(.16,1,.3,1),
+    border-color 250ms cubic-bezier(.16,1,.3,1);
+}
+.whyus-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 38, 27, 0.10);
+  border-color: var(--color-teal-accent);
+}
+
+/* Services card — left border accent on hover */
+.service-card {
+  border-left: 3px solid transparent;
+  transition:
+    border-color 250ms cubic-bezier(.16,1,.3,1),
+    box-shadow 250ms cubic-bezier(.16,1,.3,1),
+    transform 250ms cubic-bezier(.16,1,.3,1);
+}
+.service-card:hover {
+  border-left-color: var(--color-teal-accent);
+  box-shadow: 0 12px 32px rgba(0, 38, 27, 0.10);
+  transform: translateY(-4px);
+}
+
+/* Team avatar — scale on hover, pill hover */
+.team-avatar {
+  overflow: hidden;
+  border-radius: 9999px;
+}
+.team-avatar img {
+  transition: transform 300ms cubic-bezier(.16,1,.3,1);
+}
+.team-avatar:hover img {
+  transform: scale(1.03);
+}
+.team-pill {
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease,
+    transform 200ms cubic-bezier(.16,1,.3,1);
+}
+.team-pill:hover {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+/* Contact social buttons lift */
+.social-lift {
+  transition: transform 250ms cubic-bezier(.16,1,.3,1), box-shadow 250ms cubic-bezier(.16,1,.3,1), opacity 200ms ease;
+}
+.social-lift:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 38, 27, 0.12);
+}
+
+/* Image hover — scale 1.03 inside overflow-hidden */
+.img-hover-zoom {
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+.img-hover-zoom img {
+  transition: transform 400ms cubic-bezier(.16,1,.3,1);
+}
+.img-hover-zoom:hover img {
+  transform: scale(1.03);
+}
+
+/* Button hover — Imperial lift + shadow */
+.btn-primary {
+  transition: transform 250ms cubic-bezier(.16,1,.3,1), box-shadow 250ms cubic-bezier(.16,1,.3,1), background-color 200ms ease;
+}
+.btn-primary:hover {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 8px 20px rgba(0, 38, 27, 0.15);
+  background: var(--color-primary-container);
+}
+
+/* Services board */
 .services-board {
   background: transparent;
   border-radius: 0;
@@ -149,14 +325,13 @@ h1, h2, h3, h4, .font-serif {
   .services-board { padding: 0; }
 }
 
-/* Progressive disclosure — collapsed wrapper */
+/* Progressive disclosure */
 .grupo-extra {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
   transition: max-height 200ms ease, opacity 200ms ease;
 }
-
 .grupo-extra.is-expanded {
   max-height: 2000px;
   opacity: 1;
@@ -167,43 +342,36 @@ h1, h2, h3, h4, .font-serif {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Header scrolled state — Emerald trust */
+/* Header scrolled state — Imperial */
 #site-header.is-scrolled {
   background: var(--color-surface) !important;
   border-color: var(--color-outline-variant) !important;
 }
-
 #site-header.is-scrolled nav a {
   color: var(--color-on-surface-variant) !important;
 }
-
 #site-header.is-scrolled nav a:hover {
   color: var(--color-primary) !important;
 }
-
 #site-header.is-scrolled nav a[class*="border-primary"] {
   color: var(--color-primary) !important;
   border-color: var(--color-primary) !important;
 }
-
 #site-header.is-scrolled .header-menu-icon {
   color: var(--color-on-surface) !important;
 }
 
-/* Focus-visible — a11y (Emerald Deep) */
+/* Focus-visible — Imperial Teal */
 :focus-visible {
-  outline: 2px solid var(--color-emerald-deep);
+  outline: 2px solid var(--color-teal-accent);
   outline-offset: 2px;
 }
 
-/* Button hover — Emerald Deep */
-.btn-primary:hover { background: var(--color-emerald-deep); }
-
-/* Chip / tag — Emerald motif */
+/* Chip */
 .chip {
   background: var(--color-surface-container-high);
-  color: var(--color-slate-charcoal);
-  border: 1px solid var(--color-silver-metallic);
+  color: var(--color-charcoal-text);
+  border: 1px solid var(--color-platinum-silver);
   border-radius: var(--radius-full);
   padding: 0.25rem 0.75rem;
   font-size: var(--text-label-sm);
@@ -214,10 +382,10 @@ h1, h2, h3, h4, .font-serif {
   align-items: center;
 }
 
-/* Lex list — Emerald dashes */
+/* Lex list — Teal dashes */
 .list-lex li::before {
   content: '—';
-  color: var(--color-emerald-deep);
+  color: var(--color-teal-accent);
   margin-right: 0.5rem;
 }
 
@@ -228,10 +396,57 @@ section[id] {
 }
 #inicio { content-visibility: visible; }
 
+/* ————— Reveal transitions ————— */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 600ms ease, transform 600ms ease;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Stagger via data attribute */
+[data-reveal-delay="100"] { --reveal-delay: 100ms; }
+[data-reveal-delay="200"] { --reveal-delay: 200ms; }
+[data-reveal-delay="300"] { --reveal-delay: 300ms; }
+[data-reveal-delay="400"] { --reveal-delay: 400ms; }
+
+/* ————— Mobile responsiveness polish ————— */
+@media (max-width: 640px) {
+  /* Hero tighter vertical rhythm */
+  #inicio { min-height: 70vh; min-height: 70svh; }
+  #inicio h1 { line-height: 1.05; text-wrap: balance; }
+  #inicio p { text-wrap: pretty; }
+  /* Section headings balance */
+  h2, h3 { text-wrap: balance; }
+  p { overflow-wrap: break-word; }
+  /* Maps / grids tighter gaps on mobile */
+  .whyus-grid { gap: 1rem; }
+}
+
+/* Ensure touch targets ≥44px */
+@media (max-width: 768px) {
+  a, button { min-height: 44px; }
+  nav a:not(.header-menu-icon) { display: inline-flex; align-items: center; }
+}
+
+/* Fluid section padding utility override for px-gutter users: already clamps, but enforce */
+@supports (padding: clamp(16px, 4vw, 24px)) {
+  .px-gutter { padding-left: clamp(16px, 4vw, 24px); padding-right: clamp(16px, 4vw, 24px); }
+}
+
 /* Reduced-motion guard — MUST be last */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation: none !important;
     transition: none !important;
   }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  html { scroll-behavior: auto; }
 }
