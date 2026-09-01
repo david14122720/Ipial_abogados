@@ -169,25 +169,25 @@ h1, h2, h3, h4, .font-serif {
 
 /* Header scrolled state — Emerald trust */
 #site-header.is-scrolled {
-  background: var(--color-primary) !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
+  background: var(--color-surface) !important;
+  border-color: var(--color-outline-variant) !important;
 }
 
 #site-header.is-scrolled nav a {
-  color: rgba(255, 255, 255, 0.85) !important;
+  color: var(--color-on-surface-variant) !important;
 }
 
 #site-header.is-scrolled nav a:hover {
-  color: #ffffff !important;
+  color: var(--color-primary) !important;
 }
 
 #site-header.is-scrolled nav a[class*="border-primary"] {
-  color: #ffffff !important;
-  border-color: #ffffff !important;
+  color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
 }
 
 #site-header.is-scrolled .header-menu-icon {
-  color: #ffffff !important;
+  color: var(--color-on-surface) !important;
 }
 
 /* Focus-visible — a11y (Emerald Deep) */

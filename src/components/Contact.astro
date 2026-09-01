@@ -14,15 +14,17 @@ import { CONTACT } from "../consts.ts";
             <div>
               <p class="label-sm text-on-surface">Dirección</p>
               <p class="body-md text-secondary">{CONTACT.address.full}</p>
-              <p class="body-md text-secondary">{CONTACT.address.street} — {CONTACT.address.city}, {CONTACT.address.region}</p>
             </div>
           </li>
           <li class="flex items-start gap-4">
             <span class="text-primary mt-1" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5 12V9a2 2 0 0 1 2-2h3"/><circle cx="12" cy="12" r="10" opacity="0"/></svg></span>
             <div>
-              <p class="label-sm text-on-surface">Líneas de Atención (WhatsApp)</p>
-              <p class="body-md text-secondary"><a href={CONTACT.waPrimaryHref} target="_blank" rel="noopener noreferrer" aria-label={`Contactar por WhatsApp al ${CONTACT.whatsappPrimary}`} class="hover:text-primary transition-[transform,opacity] duration-200">{CONTACT.displayPrimary}</a> · <a href={CONTACT.telPrimary} class="hover:text-primary transition-[transform,opacity] duration-200">{CONTACT.displayPrimary}</a></p>
-              <p class="body-md text-secondary"><a href={CONTACT.waSecondaryHref} target="_blank" rel="noopener noreferrer" aria-label={`Contactar por WhatsApp al ${CONTACT.whatsappSecondary}`} class="hover:text-primary transition-[transform,opacity] duration-200">{CONTACT.displaySecondary}</a> · <a href={CONTACT.telSecondary} class="hover:text-primary transition-[transform,opacity] duration-200">{CONTACT.displaySecondary}</a></p>
+              <p class="label-sm text-on-surface">Líneas de Atención</p>
+              <p class="body-md text-secondary">
+                <a href={CONTACT.waPrimaryHref} target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">{CONTACT.displayPrimary}</a>
+                <span class="mx-2 opacity-30">|</span>
+                <a href={CONTACT.waSecondaryHref} target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">{CONTACT.displaySecondary}</a>
+              </p>
             </div>
           </li>
           <li class="flex items-start gap-4">
@@ -34,9 +36,9 @@ import { CONTACT } from "../consts.ts";
           </li>
         </ul>
         <div class="flex flex-wrap gap-3 mt-8">
-          <a href={CONTACT.waPrimaryHref} target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" class="inline-flex items-center gap-2 bg-whatsapp-green text-white px-6 py-3 rounded-full label-sm hover:opacity-90 transition-[transform,opacity] duration-200 hover:scale-[1.02]">Escribir por WhatsApp</a>
-          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Ipial Abogados" class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full label-sm transition-[transform,opacity] duration-200 hover:opacity-90" style="background:#1877F2">Facebook</a>
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Ipial Abogados" class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full label-sm transition-[transform,opacity] duration-200 hover:opacity-90" style="background: linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5)">Instagram</a>
+          <a href={CONTACT.waPrimaryHref} target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" class="inline-flex items-center gap-2 bg-whatsapp-green text-white px-6 py-3 rounded-full label-sm hover:opacity-90 transition-all duration-200 hover:scale-[1.02]">Escribir por WhatsApp</a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Ipial Abogados" class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full label-sm transition-all duration-200 hover:opacity-90" style="background:#1877F2">Facebook</a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Ipial Abogados" class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full label-sm transition-all duration-200 hover:opacity-90" style="background: linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5)">Instagram</a>
         </div>
       </div>
       <!-- Map placeholder -->
