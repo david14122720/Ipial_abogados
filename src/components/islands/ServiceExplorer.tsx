@@ -39,15 +39,15 @@ const GrupoCard = memo(function GrupoCard({
   return (
     <div
       style={visible ? undefined : { display: "none" }}
-      className="card-lex service-card bg-surface-container-low p-6 rounded border border-platinum-silver flex flex-col"
+      className="card-lex service-card bg-surface-container-low p-6 rounded border border-outline-variant flex flex-col"
     >
-      <h4 className="text-headline-md text-primary mb-4">{title}</h4>
+      <h4 className="text-headline-md text-on-surface mb-4">{title}</h4>
       <ul className="space-y-0">
         {first.map((item) => (
           <li
             key={item}
             data-grupo={grupo}
-            className="text-[14px] leading-6 text-on-surface border-b border-platinum-silver/60 py-2"
+            className="text-[14px] leading-6 text-on-surface border-b border-outline-variant/60 py-2"
           >
             {item}
           </li>
@@ -64,7 +64,7 @@ const GrupoCard = memo(function GrupoCard({
                 <li
                   key={item}
                   data-grupo={grupo}
-                  className="text-[14px] leading-6 text-on-surface border-b border-platinum-silver/60 py-2"
+                  className="text-[14px] leading-6 text-on-surface border-b border-outline-variant/60 py-2"
                 >
                   {item}
                 </li>
@@ -76,7 +76,7 @@ const GrupoCard = memo(function GrupoCard({
             aria-expanded={expanded}
             aria-controls={`grupo-${grupo}`}
             onClick={onToggle}
-            className="mt-4 text-xs font-semibold text-primary hover:text-teal-accent transition-colors duration-200 uppercase tracking-wider self-start"
+            className="mt-4 text-xs font-semibold text-teal-accent-light hover:text-teal-accent transition-colors duration-200 uppercase tracking-wider self-start"
           >
             {expanded ? "Leer menos" : "Leer más"}
           </button>
@@ -115,7 +115,7 @@ export default function ServiceExplorer({ grupos }: { grupos: GrupoPayload[] }) 
             className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider border transition-colors ${
               activeTab === t.id
                 ? "bg-primary text-white border-primary"
-                : "bg-surface-container-lowest text-on-surface-variant border-platinum-silver hover:border-primary hover:text-primary"
+                : "bg-surface-container-lowest text-on-surface-variant border-outline-variant hover:border-teal-accent hover:text-teal-accent-light"
             }`}
           >
             {t.label}
