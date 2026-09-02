@@ -10,50 +10,55 @@
 @import "@fontsource/material-symbols-outlined/400.css";
 
 @theme {
-  --color-primary: #00261b;
-  --color-primary-container: #0b3d2e;
-  --color-forest-deep: #05261D;
-  --color-platinum-silver: #B8B9BA;
-  --color-platinum: #B8B9BA;
-  --color-teal-accent: #148F77;
-  --color-charcoal-text: #2C3E50;
-  --color-surface: #f8f9f9;
-  --color-surface-bright: #f8f9f9;
-  --color-surface-dim: #d9dada;
-  --color-surface-container-lowest: #ffffff;
-  --color-surface-container-low: #f3f4f4;
-  --color-surface-container: #edeeee;
-  --color-surface-container-high: #e7e8e8;
-  --color-surface-container-highest: #e1e3e3;
-  --color-surface-variant: #e1e3e3;
-  --color-surface-tint: #00261b;
-  --color-on-surface: #191c1c;
-  --color-on-surface-variant: #414944;
-  --color-inverse-surface: #2e3131;
-  --color-inverse-on-surface: #f0f1f1;
-  --color-secondary: #5e5e5e;
-  --color-on-secondary: #ffffff;
-  --color-secondary-container: #e4e2e2;
-  --color-on-secondary-container: #646464;
-  --color-tertiary: #1e2123;
-  --color-on-tertiary: #ffffff;
+  /* Dark Lex Imperial — inverted surface hierarchy on Forest Deep base */
+  --color-primary: #0d3b2c;
+  --color-primary-container: #1a4d3a;
+  --color-forest-deep: #04170f;
+  --color-platinum-silver: #8fa3a0;
+  --color-platinum: #8fa3a0;
+  --color-teal-accent: #2aa88c;
+  --color-teal-accent-light: #4fd1ae;
+  --color-charcoal-text: #dfe4e1;
+  --color-surface: #08211a;
+  --color-surface-bright: #123028;
+  --color-surface-dim: #04140f;
+  --color-surface-container-lowest: #0a241c;
+  --color-surface-container-low: #0d2b21;
+  --color-surface-container: #123228;
+  --color-surface-container-high: #173a2e;
+  --color-surface-container-highest: #1c4234;
+  --color-surface-variant: #1c4234;
+  --color-surface-tint: #4fd1ae;
+  --color-on-surface: #f0f4f2;
+  --color-on-surface-variant: #b8c6c0;
+  --color-inverse-surface: #f0f4f2;
+  --color-inverse-on-surface: #08211a;
+  --color-secondary: #a0a8a4;
+  --color-on-secondary: #0a241c;
+  --color-secondary-container: #1e2825;
+  --color-on-secondary-container: #a0a8a4;
+  --color-tertiary: #c9d3ce;
+  --color-on-tertiary: #1e2123;
   --color-tertiary-container: #333638;
-  --color-on-tertiary-container: #9c9fa1;
-  --color-error: #ba1a1a;
-  --color-on-error: #ffffff;
-  --color-error-container: #ffdad6;
-  --color-on-error-container: #93000a;
-  --color-primary-fixed: #bcedd7;
-  --color-primary-fixed-dim: #a0d1bc;
-  --color-on-primary-fixed: #002116;
-  --color-on-primary-fixed-variant: #214f3f;
-  --color-outline: #717974;
-  --color-outline-variant: #c0c8c3;
-  --color-background: #f8f9f9;
-  --color-on-background: #191c1c;
-  --color-on-primary: #ffffff;
-  --color-on-primary-container: #79a894;
-  --color-inverse-primary: #a0d1bc;
+  --color-on-tertiary-container: #c9d3ce;
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+  --color-primary-fixed: #7fd6b4;
+  --color-primary-fixed-dim: #5cb894;
+  --color-on-primary-fixed: #003825;
+  --color-on-primary-fixed-variant: #005138;
+  --color-outline: #55695f;
+  --color-outline-variant: #223b31;
+  --color-background: #08211a;
+  --color-on-background: #f0f4f2;
+  --color-on-primary: #03150e;
+  --color-on-primary-container: #c9f4e2;
+  --color-inverse-primary: #2aa88c;
+  /* Fixed light tokens for text placed over dark imagery/overlays */
+  --color-text-on-dark: #eef4f1;
+  --color-text-on-dark-soft: #bfd0c8;
   --color-whatsapp-green: #25D366;
   --color-facebook-blue: #1877F2;
 
@@ -216,16 +221,16 @@ h1, h2, h3, h4, .font-serif {
 /* Cards — Imperial: rounded 0.25rem, 1px platinum, lift -4px + teal border + 0 12px 32px */
 .card-lex {
   background: var(--color-surface-container-lowest);
-  border: 1px solid var(--color-platinum-silver);
+  border: 1px solid var(--color-outline-variant);
   border-radius: var(--radius);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
   transition:
     box-shadow 250ms cubic-bezier(.16,1,.3,1),
     transform 250ms cubic-bezier(.16,1,.3,1),
     border-color 250ms cubic-bezier(.16,1,.3,1);
 }
 .card-lex:hover {
-  box-shadow: 0 12px 32px rgba(0, 38, 27, 0.10);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
   border-color: var(--color-teal-accent);
   transform: translateY(-4px);
 }
@@ -239,7 +244,7 @@ h1, h2, h3, h4, .font-serif {
 }
 .whyus-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 38, 27, 0.10);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
   border-color: var(--color-teal-accent);
 }
 
@@ -253,7 +258,7 @@ h1, h2, h3, h4, .font-serif {
 }
 .service-card:hover {
   border-left-color: var(--color-teal-accent);
-  box-shadow: 0 12px 32px rgba(0, 38, 27, 0.10);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
   transform: translateY(-4px);
 }
 
@@ -288,7 +293,7 @@ h1, h2, h3, h4, .font-serif {
 }
 .social-lift:hover {
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 8px 20px rgba(0, 38, 27, 0.12);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* Image hover — scale 1.03 inside overflow-hidden */
@@ -309,7 +314,7 @@ h1, h2, h3, h4, .font-serif {
 }
 .btn-primary:hover {
   transform: translateY(-1px) scale(1.01);
-  box-shadow: 0 8px 20px rgba(0, 38, 27, 0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(79, 209, 174, 0.25);
   background: var(--color-primary-container);
 }
 
@@ -351,11 +356,11 @@ h1, h2, h3, h4, .font-serif {
   color: var(--color-on-surface-variant) !important;
 }
 #site-header.is-scrolled nav a:hover {
-  color: var(--color-primary) !important;
+  color: var(--color-teal-accent-light) !important;
 }
 #site-header.is-scrolled nav a[class*="border-primary"] {
-  color: var(--color-primary) !important;
-  border-color: var(--color-primary) !important;
+  color: var(--color-teal-accent-light) !important;
+  border-color: var(--color-teal-accent) !important;
 }
 #site-header.is-scrolled .header-menu-icon {
   color: var(--color-on-surface) !important;
@@ -407,6 +412,15 @@ section[id] {
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+.hero-parallax-target {
+  will-change: transform;
+}
+@media (max-width: 767px) {
+  .hero-parallax-target {
+    transform: none !important;
+    will-change: auto;
+  }
 }
 /* Stagger via data attribute */
 [data-reveal-delay="100"] { --reveal-delay: 100ms; }

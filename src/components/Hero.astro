@@ -4,7 +4,8 @@ import principal from "../assets/principal.webp";
 ---
 <section id="inicio" class="relative min-h-[70vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden border-b border-platinum-silver">
   <div class="absolute inset-0 z-0">
-    <div class="absolute inset-0 bg-forest-deep/80 mix-blend-multiply z-10"></div>
+    <div class="absolute inset-0 bg-forest-deep/70 mix-blend-multiply z-10"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/60 z-10"></div>
     <Image
       src={principal}
       alt="Oficina jurídica profesional"
@@ -14,11 +15,11 @@ import principal from "../assets/principal.webp";
       quality={75}
       loading="eager"
       fetchpriority="high"
-      class="w-full h-full object-cover grayscale opacity-60"
+      class="hero-parallax-target w-full h-full object-cover grayscale opacity-50"
     />
   </div>
   <div class="relative z-20 text-center px-gutter max-w-4xl mx-auto flex flex-col items-center gap-5 md:gap-6 py-14 md:py-20">
-    <h1 data-reveal class="font-display-lg text-display-lg text-on-primary mb-1 md:mb-2 drop-shadow-md leading-[1.05] md:leading-[1.1] [text-wrap:balance]">Ipial Abogados:<br />Excelencia y Compromiso en Asesoría Jurídica</h1>
-    <p data-reveal data-reveal-delay="100" class="font-body-lg text-body-lg text-surface-container-low max-w-2xl [text-wrap:pretty] leading-relaxed">Servicios jurídicos especializados en Derecho Laboral, Seguridad Social y Derecho Penal.</p>
+    <h1 data-reveal class="font-display-lg text-display-lg text-text-on-dark mb-1 md:mb-2 drop-shadow-md leading-[1.05] md:leading-[1.1] [text-wrap:balance]">Ipial Abogados:<br />Excelencia y Compromiso en Asesoría Jurídica</h1>
+    <p data-reveal data-reveal-delay="100" class="font-body-lg text-body-lg text-text-on-dark-soft max-w-2xl [text-wrap:pretty] leading-relaxed">Servicios jurídicos especializados en Derecho Laboral, Seguridad Social y Derecho Penal.</p>
   </div>
 </section>
