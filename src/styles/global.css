@@ -91,7 +91,7 @@
   --text-label-md--line-height: 1.5;
   --text-label-md--letter-spacing: 0.05em;
   --text-label-md--font-weight: 600;
-  --text-label-sm: clamp(0.75rem, 1vw, 0.8125rem);
+  --text-label-sm: clamp(0.8125rem, 1.1vw, 0.875rem);
   --text-label-sm--line-height: 1.5;
   --text-label-sm--letter-spacing: 0.06em;
   --text-label-sm--font-weight: 600;
