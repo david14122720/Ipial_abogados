@@ -96,10 +96,10 @@
   --text-label-sm--letter-spacing: 0.06em;
   --text-label-sm--font-weight: 600;
 
-  /* Radii — Lex Imperial Stitch: DEFAULT 0.125rem, lg 0.25rem, xl 0.5rem, full 0.75rem (+ pill) */
+  /* Radii — Lex Imperial Stitch: DEFAULT 0.25rem, lg 0.5rem, xl 0.5rem, full 0.75rem (+ pill) — softened */
   --radius-sm: 0.125rem;
-  --radius: 0.125rem;
-  --radius-lg: 0.25rem;
+  --radius: 0.25rem;
+  --radius-lg: 0.5rem;
   --radius-xl: 0.5rem;
   --radius-full: 0.75rem;
   --radius-pill: 9999px;
