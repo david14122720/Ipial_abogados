@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 
 const LINKS = [
-  { href: "#servicios", label: "Servicios" },
+  { href: "#inicio", label: "Inicio" },
   { href: "#quienes-somos", label: "Quiénes somos" },
   { href: "#abogados", label: "Abogados" },
+  { href: "#servicios", label: "Servicios" },
   { href: "#porque-elegirnos", label: "Por qué elegirnos" },
   { href: "#contacto", label: "Contacto" },
 ];
