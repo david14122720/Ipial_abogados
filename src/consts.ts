@@ -2,7 +2,7 @@
 export const CONTACT = {
   whatsappPrimary: "573188215030",
   whatsappSecondary: "573137664683",
-  get waPrimaryHref() { return `https://wa.me/${this.whatsappPrimary}`; },
+  get waPrimaryHref() { return `https://wa.me/${this.whatsappPrimary}?text=${encodeURIComponent("Hola, me gustaría recibir asesoría jurídica. ¿Podemos agendar una consulta?")}`; },
   get waSecondaryHref() { return `https://wa.me/${this.whatsappSecondary}`; },
   // tel: URIs for correctness (E.164)
   get telPrimary() { return `tel:+${this.whatsappPrimary}`; },
