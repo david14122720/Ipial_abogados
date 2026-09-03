@@ -25,3 +25,10 @@ pnpm-debug.log*
 
 # SDD registry cache
 .atl/
+
+# local dev only — skills y agentes (no subir a GitHub)
+.agents/
+.claude/
+.playwright-cli/
+sdd/
+skills-lock.json
