@@ -1,46 +1,28 @@
 # Ipial Abogados
 
-Sitio web institucional para el estudio jurídico Ipial Abogados.
+Sitio institucional del estudio jurídico Ipial Abogados. Landing rápida, oscura y responsive.
 
-## 🚀 Stack Tecnológico
+## Stack
 
-- **Framework**: [Astro](https://astro.build/)
-- **UI**: [React](https://react.dev/) & [Tailwind CSS](https://tailwindcss.com/)
-- **Gestor de Paquetes**: [pnpm](https://pnpm.io/)
-- **Servidor**: [Nginx](https://nginx.org/) (Dockerized)
-- **Despliegue**: [Dokploy](https://dokploy.com/)
-- **Analíticas**: [Umami](https://umami.is/)
+Astro + React islands + Tailwind · pnpm · Nginx (Docker) · Dokploy
 
-## 🛠️ Instalación y Desarrollo
+## Desarrollo
 
-### Requisitos previos
-- Node.js (LTS)
-- pnpm
+```sh
+git clone https://github.com/david14122720/Ipial_abogados.git
+cd Ipial_abogados
+pnpm install
+pnpm run dev
+```
 
-### Pasos para ejecutar localmente
-1. Clonar el repositorio:
-   ```sh
-   git clone https://github.com/david14122720/Ipial_abogados.git
-   cd Ipial_abogados
-   ```
-2. Instalar dependencias:
-   ```sh
-   pnpm install
-   ```
-3. Iniciar servidor de desarrollo:
-   ```sh
-   pnpm run dev
-   ```
+Build: `pnpm run build` · Preview: `pnpm run preview`
 
-## 📦 Despliegue
+## Despliegue
 
-El proyecto está preparado para ser desplegado mediante Docker utilizando un Dockerfile optimizado para pnpm y Nginx, compatible con Dokploy.
+Docker + Nginx listo para Dokploy. Ver `Dockerfile` y `nginx.conf`.
 
----
-## Fuente canónica
+## Contenido
 
-**Ipialabogados.md — fuente canónica (224 líneas) — §3/§4**: este archivo es la única fuente autorizada para servicios y especialidades. `src/components/Services.astro`, `src/components/Team.astro`, `src/content.config.ts` y `src/content/**` deben transcribirlo verbatim (§6: sin invención ni atribución cruzada).
+Fuente canónica: `Ipialabogados.md`. Servicios y equipo en `src/components/` y `src/content/` la transcriben verbatim, sin inventar.
 
----
-
-*Este proyecto es propiedad de Ipial Abogados.*
+*Propiedad de Ipial Abogados.*
