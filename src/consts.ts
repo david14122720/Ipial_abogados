@@ -23,7 +23,7 @@ export const CONTACT = {
 
 export const SITE = {
   canonical: "https://ipialabogados.example.com",
-  title: "Ipial Abogados — Excelencia Jurídica y Compromiso Humano",
+  title: "Ipial Abogados | Abogados en Ipiales, Nariño — Laboral y Penal",
   description:
-    "Firma de abogados en Ipiales, Nariño. Especialistas en derecho laboral y seguridad social, penal y procesal penal. Fuente: Ipialabogados.md §2-§4.",
+    "Abogados en Ipiales, Nariño. Especialistas en derecho laboral, seguridad social y penal. Atención directa con tus abogados, sin intermediarios.",
 } as const;

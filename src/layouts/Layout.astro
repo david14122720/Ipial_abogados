@@ -21,8 +21,19 @@ const jsonLd = {
     addressRegion: CONTACT.address.region,
     addressCountry: CONTACT.address.country,
   },
+  geo: { "@type": "GeoCoordinates", latitude: 0.8049, longitude: -77.6462 },
   telephone: `+${CONTACT.whatsappPrimary}`,
-  areaServed: { "@type": "City", name: CONTACT.address.city },
+  areaServed: [
+    { "@type": "City", name: "Ipiales" },
+    { "@type": "State", name: "Nariño" },
+    { "@type": "Country", name: "Colombia" },
+  ],
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "08:00",
+    closes: "18:00",
+  },
 };
 ---
 <!doctype html>
@@ -36,6 +47,14 @@ const jsonLd = {
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
     <meta name="theme-color" content="#08211a" />
+    <meta name="geo.region" content="CO-NAR" />
+    <meta name="geo.placename" content="Ipiales, Nariño, Colombia" />
+    <meta name="geo.position" content="0.8049;-77.6462" />
+    <meta name="ICBM" content="0.8049, -77.6462" />
+    <meta property="og:site_name" content="Ipial Abogados" />
+    <meta property="og:image:width" content="1424" />
+    <meta property="og:image:height" content="736" />
+    <meta property="og:image:alt" content="Ipial Abogados — oficina jurídica en Ipiales, Nariño" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
